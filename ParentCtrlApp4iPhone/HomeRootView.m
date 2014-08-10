@@ -68,7 +68,7 @@
         [self bringSubviewToFront:maskView];
     }
     
-    float moveY=0;
+    float moveY=-250;
     if (!menuShow) {
         moveY=250;
         menuShow=YES;
@@ -76,11 +76,15 @@
         menuShow=NO;
     }
     
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:.3
                           delay:0
                         options: UIViewAnimationCurveEaseOut
                      animations:^{
-                         self.frame = CGRectMake(moveY, 0, self.frame.size.width, self.frame.size.height);
+                         [self.subviews enumerateObjectsUsingBlock:^(UIView *v, NSUInteger idx, BOOL *stop) {
+                             if(v!=self){
+                                 v.frame=CGRectMake(v.frame.origin.x+moveY, v.frame.origin.y, v.frame.size.width, v.frame.size.height);
+                             }
+                         }];
                          
                          if (menuShow) {
                              maskView.layer.opacity=0.3;

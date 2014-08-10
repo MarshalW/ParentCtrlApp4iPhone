@@ -16,9 +16,13 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    BasicViewController *viewController=[[BasicViewController alloc] initWithNibName:@"HomeView" bundle:nil];
+    [self initRouteMap];
+    
+    NSString *startState=[self getStartState];
+
+    UIViewController *viewController=[self getController:startState];
     navigationController = [[UINavigationController alloc]
-                            initWithRootViewController:viewController];
+                            initWithRootViewController: viewController];
     navigationController.navigationBar.hidden = YES;
     
     self.window.rootViewController=navigationController;
@@ -35,14 +39,53 @@
 
 - (void)forwardViewController:(NSNotification *)notification
 {
-    NSString *viewName=[[notification userInfo] objectForKey:@"view"];
-    BasicViewController *viewController=[[BasicViewController alloc] initWithNibName:viewName bundle:nil];
+    NSString *stateName=[[notification userInfo] objectForKey:@"state"];
+    UIViewController *viewController=[self getController:stateName];
     [navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)backwardViewController:(NSNotification *)notification
 {
     [navigationController popViewControllerAnimated:YES];
+}
+
+- (void) initRouteMap
+{
+    routeMap=[[NSMutableDictionary alloc] initWithCapacity:32];
+    
+    [routeMap setObject:@"HomeView" forKey:@"Home"];
+    [routeMap setObject:@"LoginView" forKey:@"Login"];
+    [routeMap setObject:@"BindRouterView" forKey:@"BindRouter"];
+    [routeMap setObject:@"ManagementView" forKey:@"Management"];
+    [routeMap setObject:@"FindDeviceView" forKey:@"FindDevice"];
+    [routeMap setObject:@"BindRouterWizardView" forKey:@"BindRouterWizard"];
+    [routeMap setObject:@"ParentAdviseView" forKey:@"ParentAdvise"];
+    [routeMap setObject:@"AboutView" forKey:@"About"];
+    [routeMap setObject:@"MoreSettingsView" forKey:@"MoreSettings"];
+
+    
+    //临时测试用
+    [routeMap setObject:@"ContentListView" forKey:@"ContentList"];
+}
+
+- (NSString *) getStartState
+{
+    BOOL isLogin=YES;//模拟已经登录过
+    if (isLogin) {
+        return @"Home";
+    }
+    return @"Login";
+}
+
+- (UIViewController *) getController: (NSString *)stateName
+{
+    NSString *viewName=(NSString *)[routeMap objectForKey:stateName];
+    return [[BasicViewController alloc] initWithNibName:viewName bundle:nil];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    
 }
 
 @end

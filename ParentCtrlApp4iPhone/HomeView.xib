@@ -9,11 +9,11 @@
                 <outlet property="contentView" destination="P6D-7b-Y84" id="dYI-eQ-Dsr"/>
                 <outlet property="footerView" destination="8Kk-NV-Jaa" id="17v-uB-q7t"/>
                 <outlet property="headerView" destination="Pnc-3L-eUh" id="AtS-YJ-SHU"/>
-                <outlet property="view" destination="iN0-l3-epB" id="tE9-vg-W7r"/>
+                <outlet property="view" destination="iN0-l3-epB" id="lLw-9i-ex1"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="RootView" customClass="HomeRootView">
+        <view tag="1000" contentMode="scaleToFill" id="iN0-l3-epB" userLabel="RootView" customClass="HomeRootView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -68,7 +68,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="0.99066634711968038" blue="0.69722778557394283" alpha="1" colorSpace="calibratedRGB"/>
         </view>
-        <view contentMode="scaleToFill" id="P6D-7b-Y84" userLabel="ContentView">
+        <view contentMode="scaleToFill" id="P6D-7b-Y84" userLabel="ContentView" customClass="HomeContentView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -79,11 +79,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPP-0H-N2c">
-                    <rect key="frame" x="145" y="189" width="30" height="30"/>
+                    <rect key="frame" x="130" y="189" width="60" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="处理">
+                    <state key="normal" title="管理设备">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="action:" destination="P6D-7b-Y84" eventType="touchUpInside" id="dwd-VI-FId"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -19,10 +19,11 @@
     return self;
 }
 
+//测试
 - (IBAction)nextStep:(id)sender
 {
-    NSDictionary *d = [NSDictionary dictionaryWithObject:@"ContentListView"
-                                                  forKey:@"view"];
+    NSDictionary *d = [NSDictionary dictionaryWithObject:@"ContentList"
+                                                  forKey:@"state"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"forward" object:self userInfo:d];
 }
 

@@ -15,4 +15,6 @@
     UIView *maskView;
 }
 
+-(void) _showMenu;
+
 @end
