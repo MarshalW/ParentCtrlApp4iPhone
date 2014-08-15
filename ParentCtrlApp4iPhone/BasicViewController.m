@@ -7,6 +7,8 @@
 //
 
 #import "BasicViewController.h"
+#import "ApplicationContext.h"
+#import "LoadContent.h"
 
 @interface BasicViewController ()
 
@@ -44,9 +46,21 @@
     }
     
     if (contentView) {
-        contentView.frame=CGRectMake(0, contentStartY, contentView.frame.size.width, contentView.frame.size.height);
+        contentView.frame=CGRectMake(0, contentStartY, contentView.frame.size.width, self.view.frame.size.height-contentStartY-contentEndY);
         [self.view addSubview:contentView];
+        
+        if ([contentView conformsToProtocol:@protocol(LoadContent)]) {
+            NSObject<LoadContent> *l=(NSObject<LoadContent> *)contentView;
+            [l LoadContent];
+        }
     }
+    
+//    [self testHttp];
+}
+
+-(void)testHttp
+{
+    [[ApplicationContext sharedContext] testAFNetworkAPI];
 }
 
 

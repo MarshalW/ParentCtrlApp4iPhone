@@ -30,8 +30,6 @@
 
 -(void)initMenuView
 {
-    NSLog(@"root view, h: %f",self.frame.size.height);
-    
     UIView *headView = [[[NSBundle mainBundle] loadNibNamed:@"HomeMenuView" owner:self options:nil] objectAtIndex:0];
     headView.frame=CGRectMake(-headView.frame.size.width, 0, headView.frame.size.width, headView.frame.size.height);
     [self addSubview:headView];
@@ -78,7 +76,7 @@
     
     [UIView animateWithDuration:.3
                           delay:0
-                        options: UIViewAnimationCurveEaseOut
+                        options: UIViewAnimationOptionCurveEaseInOut
                      animations:^{
                          [self.subviews enumerateObjectsUsingBlock:^(UIView *v, NSUInteger idx, BOOL *stop) {
                              if(v!=self){

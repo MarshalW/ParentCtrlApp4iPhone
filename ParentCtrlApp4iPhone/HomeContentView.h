@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoadContent.h"
 
-@interface HomeContentView : UIView
+@interface HomeContentView : UIView<LoadContent>
+
+{
+    __weak IBOutlet UIView *loadingView;
+    UIView *contentSubview;
+}
 
 @end

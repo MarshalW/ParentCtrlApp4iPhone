@@ -8,8 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+//test kvo
+#import "KvoDemo.h"
+
 @interface ApplicationContext : NSObject
 
+{
+    //test kvo
+    KvoDemo *k;
+}
+
 + (id)sharedContext;
+
+-(void) testAFNetworkAPI;
+
 
 @end
