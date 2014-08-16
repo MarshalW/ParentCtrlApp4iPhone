@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24F199F389A9425E8CAA1399 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A53B9ED21DEF446C8B5978A8 /* libPods.a */; };
 		F303329C1994C23B00FE858A /* HomeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F303329B1994C23B00FE858A /* HomeFooterView.m */; };
 		F303329E1994C41A00FE858A /* ContentListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F303329D1994C41A00FE858A /* ContentListView.xib */; };
 		F30332A31994D98B00FE858A /* ContentListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F30332A21994D98B00FE858A /* ContentListHeaderView.m */; };
@@ -33,6 +34,7 @@
 		F320305919975C4C006CC7B8 /* MoreSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320305819975C4C006CC7B8 /* MoreSettingsView.xib */; };
 		F320305C19975D2C006CC7B8 /* AboutHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F320305B19975D2C006CC7B8 /* AboutHeaderView.m */; };
 		F3203060199762A8006CC7B8 /* ApplicationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F320305F199762A8006CC7B8 /* ApplicationContext.m */; };
+		F3F7C025199CCFCA002FFD1D /* CustomerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F7C024199CCFCA002FFD1D /* CustomerScrollView.m */; };
 		F3F86E271994B52500E16D8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F86E261994B52500E16D8B /* Foundation.framework */; };
 		F3F86E291994B52500E16D8B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F86E281994B52500E16D8B /* CoreGraphics.framework */; };
 		F3F86E2B1994B52500E16D8B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3F86E2A1994B52500E16D8B /* UIKit.framework */; };
@@ -47,6 +49,11 @@
 		F3F86E4C1994B52500E16D8B /* ParentCtrlApp4iPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F86E4B1994B52500E16D8B /* ParentCtrlApp4iPhoneTests.m */; };
 		F3F86E571994B56D00E16D8B /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F86E561994B56D00E16D8B /* BasicViewController.m */; };
 		F3F86E591994B59000E16D8B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F86E581994B59000E16D8B /* HomeView.xib */; };
+		F3FAF3D51998B17E00DCCF57 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = F3FAF3D41998B17E00DCCF57 /* test.json */; };
+		F3FAF41B199B12C400DCCF57 /* KvoDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FAF41A199B12C400DCCF57 /* KvoDemo.m */; };
+		F3FAF421199B41B800DCCF57 /* HomeContentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FAF420199B41B800DCCF57 /* HomeContentTableView.m */; };
+		F3FAF42B199B62FB00DCCF57 /* HomeContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FAF429199B62FB00DCCF57 /* HomeContentTableViewCell.m */; };
+		F3FAF42C199B62FB00DCCF57 /* HomeContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3FAF42A199B62FB00DCCF57 /* HomeContentTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A53B9ED21DEF446C8B5978A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F303329A1994C23B00FE858A /* HomeFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFooterView.h; sourceTree = "<group>"; };
 		F303329B1994C23B00FE858A /* HomeFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFooterView.m; sourceTree = "<group>"; };
 		F303329D1994C41A00FE858A /* ContentListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentListView.xib; sourceTree = "<group>"; };
@@ -101,6 +109,8 @@
 		F320305B19975D2C006CC7B8 /* AboutHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutHeaderView.m; sourceTree = "<group>"; };
 		F320305E199762A8006CC7B8 /* ApplicationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationContext.h; sourceTree = "<group>"; };
 		F320305F199762A8006CC7B8 /* ApplicationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationContext.m; sourceTree = "<group>"; };
+		F3F7C023199CCFCA002FFD1D /* CustomerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerScrollView.h; sourceTree = "<group>"; };
+		F3F7C024199CCFCA002FFD1D /* CustomerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerScrollView.m; sourceTree = "<group>"; };
 		F3F86E231994B52500E16D8B /* ParentCtrlApp4iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParentCtrlApp4iPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F86E261994B52500E16D8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F3F86E281994B52500E16D8B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +130,16 @@
 		F3F86E551994B56D00E16D8B /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
 		F3F86E561994B56D00E16D8B /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
 		F3F86E581994B59000E16D8B /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		F3FAF3D41998B17E00DCCF57 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		F3FAF419199B12C400DCCF57 /* KvoDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KvoDemo.h; sourceTree = "<group>"; };
+		F3FAF41A199B12C400DCCF57 /* KvoDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KvoDemo.m; sourceTree = "<group>"; };
+		F3FAF41F199B41B800DCCF57 /* HomeContentTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentTableView.h; sourceTree = "<group>"; };
+		F3FAF420199B41B800DCCF57 /* HomeContentTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContentTableView.m; sourceTree = "<group>"; };
+		F3FAF428199B62FB00DCCF57 /* HomeContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentTableViewCell.h; sourceTree = "<group>"; };
+		F3FAF429199B62FB00DCCF57 /* HomeContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContentTableViewCell.m; sourceTree = "<group>"; };
+		F3FAF42A199B62FB00DCCF57 /* HomeContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeContentTableViewCell.xib; sourceTree = "<group>"; };
+		F3FAF42D199B722800DCCF57 /* LoadContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadContent.h; sourceTree = "<group>"; };
+		F5D23603EBCA484BA8FC68CF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +150,7 @@
 				F3F86E291994B52500E16D8B /* CoreGraphics.framework in Frameworks */,
 				F3F86E2B1994B52500E16D8B /* UIKit.framework in Frameworks */,
 				F3F86E271994B52500E16D8B /* Foundation.framework in Frameworks */,
+				24F199F389A9425E8CAA1399 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +180,13 @@
 				F320301B1995F419006CC7B8 /* HomeMenuView.xib */,
 				F320302E19966059006CC7B8 /* HomeContentView.h */,
 				F320302F19966059006CC7B8 /* HomeContentView.m */,
+				F3FAF41F199B41B800DCCF57 /* HomeContentTableView.h */,
+				F3FAF420199B41B800DCCF57 /* HomeContentTableView.m */,
+				F3FAF428199B62FB00DCCF57 /* HomeContentTableViewCell.h */,
+				F3FAF429199B62FB00DCCF57 /* HomeContentTableViewCell.m */,
+				F3FAF42A199B62FB00DCCF57 /* HomeContentTableViewCell.xib */,
+				F3F7C023199CCFCA002FFD1D /* CustomerScrollView.h */,
+				F3F7C024199CCFCA002FFD1D /* CustomerScrollView.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -260,6 +288,9 @@
 			children = (
 				F320305E199762A8006CC7B8 /* ApplicationContext.h */,
 				F320305F199762A8006CC7B8 /* ApplicationContext.m */,
+				F3FAF419199B12C400DCCF57 /* KvoDemo.h */,
+				F3FAF41A199B12C400DCCF57 /* KvoDemo.m */,
+				F3FAF42D199B722800DCCF57 /* LoadContent.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -272,6 +303,7 @@
 				F3F86E251994B52500E16D8B /* Frameworks */,
 				F3F86E241994B52500E16D8B /* Products */,
 				F320301D19962D46006CC7B8 /* 家长控制-0802.png */,
+				F5D23603EBCA484BA8FC68CF /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +323,7 @@
 				F3F86E281994B52500E16D8B /* CoreGraphics.framework */,
 				F3F86E2A1994B52500E16D8B /* UIKit.framework */,
 				F3F86E3F1994B52500E16D8B /* XCTest.framework */,
+				A53B9ED21DEF446C8B5978A8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -315,6 +348,7 @@
 				F3F86E2D1994B52500E16D8B /* Supporting Files */,
 				F3F86E551994B56D00E16D8B /* BasicViewController.h */,
 				F3F86E561994B56D00E16D8B /* BasicViewController.m */,
+				F3FAF3D41998B17E00DCCF57 /* test.json */,
 			);
 			path = ParentCtrlApp4iPhone;
 			sourceTree = "<group>";
@@ -355,9 +389,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3F86E4F1994B52500E16D8B /* Build configuration list for PBXNativeTarget "ParentCtrlApp4iPhone" */;
 			buildPhases = (
+				85329B95423E4E3A94F1891C /* Check Pods Manifest.lock */,
 				F3F86E1F1994B52500E16D8B /* Sources */,
 				F3F86E201994B52500E16D8B /* Frameworks */,
 				F3F86E211994B52500E16D8B /* Resources */,
+				A5E3473565D94ACAA76245EF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -425,7 +461,9 @@
 			files = (
 				F320304419974193006CC7B8 /* BindRouterWizardView.xib in Resources */,
 				F3F86E311994B52500E16D8B /* InfoPlist.strings in Resources */,
+				F3FAF3D51998B17E00DCCF57 /* test.json in Resources */,
 				F320305919975C4C006CC7B8 /* MoreSettingsView.xib in Resources */,
+				F3FAF42C199B62FB00DCCF57 /* HomeContentTableViewCell.xib in Resources */,
 				F320305019975663006CC7B8 /* ParentAdviseView.xib in Resources */,
 				F3F86E391994B52500E16D8B /* Images.xcassets in Resources */,
 				F320301C1995F419006CC7B8 /* HomeMenuView.xib in Resources */,
@@ -450,6 +488,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		85329B95423E4E3A94F1891C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5E3473565D94ACAA76245EF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F3F86E1F1994B52500E16D8B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -461,6 +532,7 @@
 				F320304D199754D8006CC7B8 /* BindRouterWizardContentView.m in Sources */,
 				F320301A1995F2AD006CC7B8 /* HomeRootView.m in Sources */,
 				F320302719965C85006CC7B8 /* LoginView.m in Sources */,
+				F3FAF421199B41B800DCCF57 /* HomeContentTableView.m in Sources */,
 				F3203060199762A8006CC7B8 /* ApplicationContext.m in Sources */,
 				F32030471997536B006CC7B8 /* BindRouterWizardHeaderView.m in Sources */,
 				F320303019966059006CC7B8 /* HomeContentView.m in Sources */,
@@ -472,6 +544,9 @@
 				F30332A31994D98B00FE858A /* ContentListHeaderView.m in Sources */,
 				F3203053199758C4006CC7B8 /* ParentAdviseHeaderView.m in Sources */,
 				F320302D19965E55006CC7B8 /* BindRouterView.m in Sources */,
+				F3FAF42B199B62FB00DCCF57 /* HomeContentTableViewCell.m in Sources */,
+				F3F7C025199CCFCA002FFD1D /* CustomerScrollView.m in Sources */,
+				F3FAF41B199B12C400DCCF57 /* KvoDemo.m in Sources */,
 				F3F86E571994B56D00E16D8B /* BasicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,6 +661,7 @@
 		};
 		F3F86E501994B52500E16D8B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5D23603EBCA484BA8FC68CF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -599,6 +675,7 @@
 		};
 		F3F86E511994B52500E16D8B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5D23603EBCA484BA8FC68CF /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
