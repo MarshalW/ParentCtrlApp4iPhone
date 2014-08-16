@@ -19,7 +19,7 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
-        <view clipsSubviews="YES" contentMode="scaleToFill" id="noA-Tj-oDB" userLabel="HeaderView" customClass="ManagementHeaderView">
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="noA-Tj-oDB" userLabel="HeaderView" customClass="HeaderView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

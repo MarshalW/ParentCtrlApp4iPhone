@@ -19,7 +19,7 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
-        <view contentMode="scaleToFill" id="xmy-U5-98I" userLabel="HeaderView" customClass="BindRouterWizardHeaderView">
+        <view contentMode="scaleToFill" id="xmy-U5-98I" userLabel="HeaderView" customClass="HeaderView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

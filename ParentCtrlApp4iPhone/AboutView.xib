@@ -26,7 +26,7 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
-        <view contentMode="scaleToFill" id="AgW-bI-wE1" userLabel="headerView" customClass="AboutHeaderView">
+        <view contentMode="scaleToFill" id="AgW-bI-wE1" userLabel="headerView" customClass="HeaderView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
