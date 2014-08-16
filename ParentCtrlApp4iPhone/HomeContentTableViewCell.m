@@ -94,17 +94,17 @@ float kAnimDuration=.3;
                              animations:^{
                                  if (opened) {
                                      frontView.frame=startFrame;
-                                     currentScrollViewFrame=startScrollViewFrame;
+//                                     currentScrollViewFrame=startScrollViewFrame;
                                  }else{
                                      frontView.frame=endFrame;
-                                     currentScrollViewFrame=endScrollViewFrame;
+//                                     currentScrollViewFrame=endScrollViewFrame;
                                  }
                              }
                              completion:^(BOOL finished){
                                  opened=!opened;
                                  
                                 
-                                 scrollView.frame=currentScrollViewFrame;
+//                                 scrollView.frame=currentScrollViewFrame;
                              }];
             break;
         }
@@ -118,6 +118,10 @@ float kAnimDuration=.3;
     }
     
     //TODO 改为根据位移或者swipe速度判断是打开还是关闭，目前是简单的!opened
+}
+- (IBAction)action:(id)sender {
+    
+    NSLog(@"action!");
 }
 
 
