@@ -35,5 +35,5 @@ $ pod install
 
 注意，打开项目，需要打开`xcworkspace`扩展名的文件，别打开`xcodeproj`结尾文件
 
-<iframe width="420" height="315" src="//www.youtube.com/embed/6y-dgXHGENU" frameborder="0" allowfullscreen></iframe>
+如果你能看youtube，可看导入项目的完整视频：http://youtu.be/6y-dgXHGENU
 
