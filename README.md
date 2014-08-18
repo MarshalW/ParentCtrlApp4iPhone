@@ -35,5 +35,5 @@ $ pod install
 
 注意，打开项目，需要打开`xcworkspace`扩展名的文件，别打开`xcodeproj`结尾文件
 
-YT("http://www.youtube.com/watch?v=ArHQjQyIS70", print = TRUE)
+<iframe width="420" height="315" src="//www.youtube.com/embed/6y-dgXHGENU" frameborder="0" allowfullscreen></iframe>
 
