@@ -10,13 +10,13 @@
 
 @implementation HomeRootView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-    }
-    return self;
-}
+//- (id)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//    }
+//    return self;
+//}
 
 - (id)initWithCoder:(NSCoder *)decoder
 {

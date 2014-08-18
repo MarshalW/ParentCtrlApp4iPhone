@@ -51,21 +51,9 @@
 
 - (void) initRouteMap
 {
-    routeMap=[[NSMutableDictionary alloc] initWithCapacity:32];
+    controllerMap=[[NSMutableDictionary alloc] initWithCapacity:32];
     
-    [routeMap setObject:@"HomeView" forKey:@"Home"];
-    [routeMap setObject:@"LoginView" forKey:@"Login"];
-    [routeMap setObject:@"BindRouterView" forKey:@"BindRouter"];
-    [routeMap setObject:@"ManagementView" forKey:@"Management"];
-    [routeMap setObject:@"FindDeviceView" forKey:@"FindDevice"];
-    [routeMap setObject:@"BindRouterWizardView" forKey:@"BindRouterWizard"];
-    [routeMap setObject:@"ParentAdviseView" forKey:@"ParentAdvise"];
-    [routeMap setObject:@"AboutView" forKey:@"About"];
-    [routeMap setObject:@"MoreSettingsView" forKey:@"MoreSettings"];
-
-    
-    //临时测试用
-    [routeMap setObject:@"ContentListView" forKey:@"ContentList"];
+    [controllerMap setObject:@"HomeViewController" forKey:@"Home"];
 }
 
 - (NSString *) getStartState
@@ -79,8 +67,17 @@
 
 - (UIViewController *) getController: (NSString *)stateName
 {
-    NSString *viewName=(NSString *)[routeMap objectForKey:stateName];
-    return [[BasicViewController alloc] initWithNibName:viewName bundle:nil];
+    NSString *viewName=(NSString *)[controllerMap objectForKey:stateName];
+    
+    UIViewController *controller=nil;
+    
+    if (!viewName) {
+        controller= [[BasicViewController alloc] initWithNibName:[NSString stringWithFormat:@"%@View",stateName ] bundle:nil];
+    }else{
+        controller=[[NSClassFromString(@"HomeViewController") alloc] initWithNibName:[NSString stringWithFormat:@"%@View",stateName ] bundle:nil];
+    }
+    
+    return controller;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

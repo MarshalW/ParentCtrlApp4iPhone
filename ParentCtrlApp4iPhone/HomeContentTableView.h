@@ -10,4 +10,10 @@
 
 @interface HomeContentTableView : UITableView <UITableViewDelegate , UITableViewDataSource>
 
+{
+    NSArray *deviceInfoArray;
+}
+
+- (id)initWithFrame:(CGRect)frame deviceInfoArray:(NSArray *) array;
+
 @end

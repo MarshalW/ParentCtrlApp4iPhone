@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "LoadContent.h"
 
-@interface HomeContentView : UIView<LoadContent>
+@interface HomeContentView : UIView
 
 {
-    __weak IBOutlet UIView *loadingView;
-    UIView *contentSubview;
+    __weak IBOutlet UIView *loadingView;//加载中现实的view
+    UIView *contentSubview;//内容view
 }
 
 @end

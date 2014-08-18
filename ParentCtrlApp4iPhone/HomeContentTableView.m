@@ -10,15 +10,17 @@
 #import "HomeContentTableViewCell.h"
 
 
-int count=5;
+int count=10;//临时代码，为了演示删除交互
+
 @implementation HomeContentTableView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame deviceInfoArray:(NSArray *) array
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.delegate=self;
         self.dataSource=self;
+        deviceInfoArray=array;
     }
     return self;
 }
@@ -30,29 +32,31 @@ int count=5;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return count--;
+    return [deviceInfoArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"mycell";
+    static NSString *simpleTableIdentifier = @"deviceInfocell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    HomeContentTableViewCell *cell = (HomeContentTableViewCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
         
         cell=[[[NSBundle mainBundle] loadNibNamed:@"HomeContentTableViewCell" owner:self options:nil] objectAtIndex:0];
     }
     
+    [cell initWithData:[deviceInfoArray objectAtIndex:indexPath.row]];
+    
     return cell;
 }
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"Row pressed!!");
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    NSLog(@"Row pressed!!");
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 110;

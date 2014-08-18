@@ -12,7 +12,7 @@
 
 {
     UINavigationController *navigationController;
-    NSMutableDictionary *routeMap;
+    NSMutableDictionary *controllerMap;
 }
 
 @property (strong, nonatomic) UIWindow *window;

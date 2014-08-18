@@ -21,9 +21,6 @@ float kAnimDuration=.3;
     startFrame=frontView.frame;
     endFrame=CGRectMake(kEndPointX, frontView.frame.origin.y, frontView.frame.size.width, frontView.frame.size.height);
     
-    startScrollViewFrame=scrollView.frame;
-    endScrollViewFrame=CGRectMake(scrollView.frame.origin.x, scrollView.frame.origin.y, scrollView.frame.size.width+kEndPointX, scrollView.frame.size.height);
-    
     //CGFloat top, left, bottom, right;
     scrollView.contentInset=UIEdgeInsetsMake(0,0,kScrollViewContentBottom,kScrollViewRight);
     scrollView.delaysContentTouches=YES;
@@ -36,8 +33,32 @@ float kAnimDuration=.3;
     [self.useButton addTarget:self action:@selector(useIt:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+-(void) initWithData:(DeviceInfo *)info
+{
+    deviceInfo=info;
+    [deviceInfo addObserver:self forKeyPath:@"networkSpeed" options:NSKeyValueObservingOptionNew context:nil];
+
+}
+
+- (void)observeValueForKeyPath:(NSString*)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary*)change
+                       context:(void*)context
+{
+//    NSLog(@"observe .. ok!");
+}
+
+
+//用于取消之前的KVO观察者
+- (void)prepareForReuse
+{
+    NSLog(@"prepareForReuse");
+    [deviceInfo removeObserver:self forKeyPath:@"networkSpeed"];
+}
+
+
 -(void)deleteIt:(id)sender{
-    NSLog(@"delete it. cell super view %@",[self.superview superview]);
+    NSLog(@"delete it.");
     
     UITableView *tableView=(UITableView *)[self.superview superview];
     
@@ -50,7 +71,7 @@ float kAnimDuration=.3;
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                      withRowAnimation:UITableViewRowAnimationFade];
     
-    //TODO 临时写过，cell里的view都没有删除呢
+    //TODO 临时写过，cell里的view也许需要手工删除
 
 }
 
@@ -94,17 +115,12 @@ float kAnimDuration=.3;
                              animations:^{
                                  if (opened) {
                                      frontView.frame=startFrame;
-//                                     currentScrollViewFrame=startScrollViewFrame;
                                  }else{
                                      frontView.frame=endFrame;
-//                                     currentScrollViewFrame=endScrollViewFrame;
                                  }
                              }
                              completion:^(BOOL finished){
                                  opened=!opened;
-                                 
-                                
-//                                 scrollView.frame=currentScrollViewFrame;
                              }];
             break;
         }

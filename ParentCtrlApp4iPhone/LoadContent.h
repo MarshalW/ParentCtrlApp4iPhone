@@ -10,6 +10,6 @@
 
 @protocol LoadContent <NSObject>
 
--(void) LoadContent;
+-(void) loadContent;
 
 @end
