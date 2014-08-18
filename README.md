@@ -33,5 +33,5 @@ ParentCtrlApp4iPhone
 
 $ pod install
 
-注意，打开项目文件后，需要打开`xcworkspace`扩展名的文件，然后就可以使用项目了。
+注意，打开项目，需要打开`xcworkspace`扩展名的文件，别打开`xcodeproj`结尾文件
 
