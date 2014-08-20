@@ -42,6 +42,7 @@
     NSString *stateName=[[notification userInfo] objectForKey:@"state"];
     UIViewController *viewController=[self getController:stateName];
     [navigationController pushViewController:viewController animated:YES];
+
 }
 
 - (void)backwardViewController:(NSNotification *)notification

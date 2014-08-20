@@ -8,6 +8,7 @@
 
 #import "HomeContentTableViewCell.h"
 
+
 //Cell内容视图移出后的X坐标
 int kEndPointX=-150;
 float kScrollViewContentBottom=95.;
@@ -33,11 +34,24 @@ float kAnimDuration=.3;
     [self.useButton addTarget:self action:@selector(useIt:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)didMoveToSuperview{
+    if (!hasAddScrollEnableKvo) {
+        tableView=(HomeContentTableView *)[self findTableView:self];
+        
+        [tableView addObserver:self forKeyPath:@"scrollEnabled" options:NSKeyValueObservingOptionNew context:nil];
+        [tableView addObserver:self forKeyPath:@"timestamp" options:NSKeyValueObservingOptionNew context:nil];
+        
+        hasAddScrollEnableKvo=YES;
+    }
+    
+}
+
 -(void) initWithData:(DeviceInfo *)info
 {
     deviceInfo=info;
     [deviceInfo addObserver:self forKeyPath:@"networkSpeed" options:NSKeyValueObservingOptionNew context:nil];
-
+    
+    self.textLabel.text=[NSString stringWithFormat: @"%@", info.networkSpeed];
 }
 
 - (void)observeValueForKeyPath:(NSString*)keyPath
@@ -45,34 +59,87 @@ float kAnimDuration=.3;
                         change:(NSDictionary*)change
                        context:(void*)context
 {
-//    NSLog(@"observe .. ok!");
+    if ([keyPath isEqualToString:@"scrollEnabled"]) {
+        if (opened) {
+            [self enableOrDisableSubviews:NO];
+        }else{
+            [self setUserInteractionEnabled:tableView.scrollEnabled];
+            [self enableOrDisableSubviews:YES];
+        }
+    }
+    
+    if ([keyPath isEqualToString:@"timestamp"]) {
+        if (opened) {
+            [self openOrCloseFrontView];
+        }
+    }
+    
+    if ([keyPath isEqualToString:@"networkSpeed"]) {
+        NSLog(@"network speed changed: %@, %@",change,change[@"new"]);
+//        DeviceInfo *d=(DeviceInfo *)object;
+        self.textLabel.text=[NSString stringWithFormat: @"%@", change[@"new"]];
+    }
 }
 
+-(void)enableOrDisableSubviews:(BOOL)enable
+{
+    for (int i=0; i<[frontView subviews].count; i++) {
+        UIView *v=[[frontView subviews] objectAtIndex:i];
+        if ([v isKindOfClass:[UIScrollView class]]) {
+            v.userInteractionEnabled=YES;
+        }else{
+            v.userInteractionEnabled=enable;
+        }
+    }
+}
 
 //用于取消之前的KVO观察者
 - (void)prepareForReuse
 {
-    NSLog(@"prepareForReuse");
+    opened=NO;
+    frontView.frame=startFrame;
+    [self enableOrDisableSubviews:YES];
+    
     [deviceInfo removeObserver:self forKeyPath:@"networkSpeed"];
+}
+
+- (UITableView *)superTableView
+{
+    return (UITableView *)[self findTableView:self];
+}
+
+- (UIView *)findTableView:(UIView *)view
+{
+    if (view.superview && [view.superview isKindOfClass:[UITableView class]]) {
+        return view.superview;
+    }
+    return [self findTableView:view.superview];
+}
+
+- (void)dealloc
+{
+    NSLog(@"dealloc ..");
+    [deviceInfo removeObserver:self forKeyPath:@"networkSpeed"];
+    
+    [tableView removeObserver:self forKeyPath:@"scrollEnabled"];
+    [tableView removeObserver:self forKeyPath:@"timestamp"];
 }
 
 
 -(void)deleteIt:(id)sender{
-    NSLog(@"delete it.");
-    
-    UITableView *tableView=(UITableView *)[self.superview superview];
+    //    NSLog(@"delete it.");
     
     NSIndexPath *indexPath = [tableView indexPathForCell:self];
+    [tableView removeDevice:(int)indexPath.row];
     
-    [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionMiddle];
-    
-    NSLog(@"indexpath %@",indexPath);
-    
+    [tableView beginUpdates];
     [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                      withRowAnimation:UITableViewRowAnimationFade];
+    [tableView endUpdates];
+    
+    tableView.scrollEnabled=YES;
     
     //TODO 临时写过，cell里的view也许需要手工删除
-
 }
 
 -(void)useIt:(id)sender{
@@ -109,19 +176,8 @@ float kAnimDuration=.3;
                 break;
             }
             
-            [UIView animateWithDuration:kAnimDuration
-                                  delay:0
-                                options: UIViewAnimationOptionCurveEaseInOut
-                             animations:^{
-                                 if (opened) {
-                                     frontView.frame=startFrame;
-                                 }else{
-                                     frontView.frame=endFrame;
-                                 }
-                             }
-                             completion:^(BOOL finished){
-                                 opened=!opened;
-                             }];
+            [self openOrCloseFrontView];
+            
             break;
         }
         case UIGestureRecognizerStateCancelled:{
@@ -135,8 +191,28 @@ float kAnimDuration=.3;
     
     //TODO 改为根据位移或者swipe速度判断是打开还是关闭，目前是简单的!opened
 }
-- (IBAction)action:(id)sender {
+
+-(void)openOrCloseFrontView
+{
     
+    [UIView animateWithDuration:kAnimDuration
+                          delay:0
+                        options: UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         if (opened) {
+                             frontView.frame=startFrame;
+                         }else{
+                             frontView.frame=endFrame;
+                         }
+                     }
+                     completion:^(BOOL finished){
+                         opened=!opened;
+                         [tableView setValue:@(!opened) forKey:@"scrollEnabled"];
+                     }];
+}
+
+
+- (IBAction)action:(id)sender {
     NSLog(@"action!");
 }
 

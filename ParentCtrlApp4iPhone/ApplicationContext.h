@@ -15,7 +15,7 @@
 
 {
     //成功的block
-    void (^_completionHandler)(NSArray  *data);
+    void (^_completionHandler)(NSMutableArray  *data);
     //错误的block
     void (^_errorHandler)(NSError  *error);
     
@@ -26,7 +26,7 @@
 + (id)sharedContext;
 
 //获取该路由下的设备信息数组
-- (void) getDevicesInfoWithTheRouter:(NSDictionary *)params  success:(void(^)(NSArray *))sucessHandler error:(void(^)(NSError *))errorHandler;
+- (void) getDevicesInfoWithTheRouter:(NSDictionary *)params  success:(void(^)(NSMutableArray *))sucessHandler error:(void(^)(NSError *))errorHandler;
 
 
 @end

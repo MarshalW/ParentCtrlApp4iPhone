@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "DeviceInfo.h"
+#import "HomeContentTableView.h"
 
 @interface HomeContentTableViewCell : UITableViewCell
 {
@@ -17,7 +18,10 @@
     CGRect startFrame,endFrame;
     __weak IBOutlet UIView *tagView,*frontView;
     __weak IBOutlet UIScrollView *scrollView;
-    BOOL opened, stopped;
+    BOOL opened, stopped, hasAddScrollEnableKvo;
+    
+    
+    __weak HomeContentTableView *tableView;
     
     DeviceInfo *deviceInfo;
 }

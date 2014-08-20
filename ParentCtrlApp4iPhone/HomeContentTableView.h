@@ -11,9 +11,12 @@
 @interface HomeContentTableView : UITableView <UITableViewDelegate , UITableViewDataSource>
 
 {
-    NSArray *deviceInfoArray;
+    NSMutableArray *deviceInfoArray;
+    NSString * timestamp;
 }
 
-- (id)initWithFrame:(CGRect)frame deviceInfoArray:(NSArray *) array;
+- (id)initWithFrame:(CGRect)frame deviceInfoArray:(NSMutableArray *) array;
+
+-(void) removeDevice:(int)index;
 
 @end

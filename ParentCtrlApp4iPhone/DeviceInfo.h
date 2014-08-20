@@ -11,11 +11,14 @@
 @interface DeviceInfo : NSObject
 
 {
-    NSNumber *networkSpeed;//网速
+//    NSNumber *networkSpeed;//网速
     long totalTime;//总的时长
 }
 
-- (id)initWithNetworkSpeed:(long)speed;
+@property(nonatomic,assign) int rid;
 
+@property(nonatomic,assign) NSNumber *networkSpeed;
+
+- (id)initWithNetworkSpeed:(long)speed;
 
 @end

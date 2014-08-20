@@ -124,7 +124,6 @@
 		F3FAF428199B62FB00DCCF57 /* HomeContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentTableViewCell.h; sourceTree = "<group>"; };
 		F3FAF429199B62FB00DCCF57 /* HomeContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContentTableViewCell.m; sourceTree = "<group>"; };
 		F3FAF42A199B62FB00DCCF57 /* HomeContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeContentTableViewCell.xib; sourceTree = "<group>"; };
-		F3FAF42D199B722800DCCF57 /* LoadContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadContent.h; sourceTree = "<group>"; };
 		F5D23603EBCA484BA8FC68CF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,7 +259,6 @@
 			children = (
 				F320305E199762A8006CC7B8 /* ApplicationContext.h */,
 				F320305F199762A8006CC7B8 /* ApplicationContext.m */,
-				F3FAF42D199B722800DCCF57 /* LoadContent.h */,
 				F3F7C026199F4E98002FFD1D /* HeaderView.h */,
 				F3F7C027199F4E98002FFD1D /* HeaderView.m */,
 				F3F7C029199F802C002FFD1D /* DeviceInfo.h */,

@@ -33,7 +33,7 @@
 //加载列表所需的设备数据数组
 -(void)loadData
 {
-    [[ApplicationContext sharedContext] getDevicesInfoWithTheRouter:nil                                                                 success:^(NSArray *data){
+    [[ApplicationContext sharedContext] getDevicesInfoWithTheRouter:nil                                                                 success:^(NSMutableArray *data){
         [self loadContentSubviews:data];
     }error:^(NSError * error) {
         NSLog(@"error: %@",error);
@@ -41,7 +41,7 @@
 }
 
 //加载内容子视图
--(void) loadContentSubviews:(NSArray *)array
+-(void) loadContentSubviews:(NSMutableArray *)array
 {
     contentSubview.backgroundColor=[UIColor lightGrayColor];
     [self addSubview:contentSubview];

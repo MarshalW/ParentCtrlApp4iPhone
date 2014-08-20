@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LoadContent.h"
 
 @interface HomeContentView : UIView
 

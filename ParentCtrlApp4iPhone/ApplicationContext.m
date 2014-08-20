@@ -51,7 +51,7 @@
     }];
 }
 
-- (void) getDevicesInfoWithTheRouter:(NSDictionary *)params  success:(void(^)(NSArray *))sucessHandler error:(void(^)(NSError *))errorHandler
+- (void) getDevicesInfoWithTheRouter:(NSDictionary *)params  success:(void(^)(NSMutableArray *))sucessHandler error:(void(^)(NSError *))errorHandler
 {
     NSMutableArray *array=[NSMutableArray new];
     
@@ -67,6 +67,10 @@
         [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:11]];
         [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:31]];
         [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:4]];
+        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:17]];
+        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:9]];
+        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:16]];
+        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:14]];
     }else{
         [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:10]];
         [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:14]];
@@ -74,9 +78,19 @@
         [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:12]];
         [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:8]];
         [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:7]];
-        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:11]];
+        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:3]];
+        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:22]];
+        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:18]];
+        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:19]];
+        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:7]];
     }
     
+    chooseFirstOrSecond=!chooseFirstOrSecond;
+    
+    for (int i=0; i<array.count; i++) {
+        DeviceInfo *d=(DeviceInfo *)[array objectAtIndex:i];
+        d.rid+=i;
+    }
     
     _completionHandler = [sucessHandler copy];
     _errorHandler=[errorHandler copy];

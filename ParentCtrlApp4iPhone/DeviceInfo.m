@@ -16,26 +16,26 @@ long countNetworkSpeed=0;
 {
     self = [super init];
     if (self) {
-        networkSpeed=[NSNumber numberWithLong:speed];
+        self.networkSpeed=[NSNumber numberWithLong:speed];
     }
     return self;
 }
 
-//模拟设备信息的变化
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
-    }
-    return self;
-}
-
-- (void)timerAction:(NSTimer*)timer
-{
-//    NSLog(@"networkSpeed: %@",networkSpeed);
-
-    [self setValue:[NSNumber numberWithLong:(countNetworkSpeed++) ] forKey:@"networkSpeed"];
-}
+////模拟设备信息的变化
+//- (id)init
+//{
+//    self = [super init];
+//    if (self) {
+//        [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+//    }
+//    return self;
+//}
+//
+//- (void)timerAction:(NSTimer*)timer
+//{
+////    NSLog(@"networkSpeed: %@",networkSpeed);
+//
+//    [self setValue:[NSNumber numberWithLong:(countNetworkSpeed++) ] forKey:@"networkSpeed"];
+//}
 
 @end
