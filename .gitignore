@@ -10,4 +10,4 @@ ParentCtrlApp4iPhone.xcworkspace
 .DS_Store
 Build
 Podfile.lock
-Pods/
+Pods
