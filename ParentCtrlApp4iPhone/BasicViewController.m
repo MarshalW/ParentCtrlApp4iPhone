@@ -47,11 +47,6 @@
     if (contentView) {
         contentView.frame=CGRectMake(0, contentStartY, contentView.frame.size.width, self.view.frame.size.height-contentStartY-contentEndY);
         [self.view addSubview:contentView];
-        
-//        if ([contentView conformsToProtocol:@protocol(LoadContent)]) {
-//            NSObject<LoadContent> *l=(NSObject<LoadContent> *)contentView;
-//            [l loadContent];
-//        }
     }
 }
 

@@ -13,10 +13,13 @@
 {
     NSMutableArray *deviceInfoArray;
     NSString * timestamp;
+    NSTimer *timer;
 }
 
 - (id)initWithFrame:(CGRect)frame deviceInfoArray:(NSMutableArray *) array;
 
 -(void) removeDevice:(int)index;
+
+-(void) stop;
 
 @end

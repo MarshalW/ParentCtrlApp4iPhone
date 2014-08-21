@@ -42,6 +42,17 @@
     NSString *stateName=[[notification userInfo] objectForKey:@"state"];
     UIViewController *viewController=[self getController:stateName];
     [navigationController pushViewController:viewController animated:YES];
+    
+    if ([stateName isEqualToString:@"Login"]) {
+        NSLog(@">>>>>>>>>test remove other view controller");
+        
+        NSMutableArray *navigationArray = [[NSMutableArray alloc] initWithArray: navigationController.viewControllers];
+        UIViewController *controller=[navigationArray objectAtIndex:0];
+        NSLog(@"controller: %@",controller);
+        [controller removeFromParentViewController];
+        [navigationArray removeObjectAtIndex: 0];  // You can pass your index here
+        navigationController.viewControllers = navigationArray;
+    }
 
 }
 

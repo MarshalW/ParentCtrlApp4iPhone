@@ -118,7 +118,7 @@ float kAnimDuration=.3;
 
 - (void)dealloc
 {
-    NSLog(@"dealloc ..");
+    NSLog(@"=====>>>>>>dealloc cell");
     [deviceInfo removeObserver:self forKeyPath:@"networkSpeed"];
     
     [tableView removeObserver:self forKeyPath:@"scrollEnabled"];
@@ -215,6 +215,5 @@ float kAnimDuration=.3;
 - (IBAction)action:(id)sender {
     NSLog(@"action!");
 }
-
 
 @end

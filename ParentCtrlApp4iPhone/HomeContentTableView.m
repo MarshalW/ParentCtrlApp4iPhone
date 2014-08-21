@@ -19,22 +19,22 @@
     if (self) {
         self.delegate=self;
         self.dataSource=self;
-        
-//        deviceInfoArray=[NSMutableArray new];
-//        for (int i=0; i<10; i++) {
-//            [deviceInfoArray addObject:[DeviceInfo new]];
-//        }
         deviceInfoArray=array;
         
-         [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+        timer=[NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
     }
     return self;
+}
+
+-(void) stop
+{
+    [timer invalidate];
 }
 
 - (void)timerAction:(NSTimer*)timer
 {
     NSLog(@"networkSpeed ...");
-
+    
     [[ApplicationContext sharedContext] getDevicesInfoWithTheRouter:nil success:^(NSMutableArray * array) {
         for (int i=0; i<deviceInfoArray.count; i++) {
             DeviceInfo *device=[deviceInfoArray objectAtIndex:i];
@@ -94,6 +94,11 @@
     if (!self.scrollEnabled) {
         [self setValue:[NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000] forKey:@"timestamp"];
     }
+}
+
+-(void)dealloc
+{
+    NSLog(@"===>>>>table view dealloc");
 }
 
 @end
