@@ -3,6 +3,7 @@ ParentCtrlApp4iPhone
 
 # 版本描述
 
+* m4sp1：Home（带TableView）和登录部分的切换正常了
 * m4: 实现基本的自定义TableView
 * m3sp1：对m3中bug的纠正，即表单的条目，无法接收到touch相关事件
 * m3: 初步实现首页的自定义列表和横向滑动删除条目
