@@ -10,4 +10,10 @@
 
 @interface HomeMenuView : UIView
 
+{
+    BOOL logout;
+}
+
+-(BOOL)isLogout;
+
 @end

@@ -10,33 +10,35 @@
 #import "HomeContentView.h"
 #import "HomeContentTableView.h"
 
-@interface HomeViewController ()
-
-@end
+#import "HomeMenuView.h"
 
 @implementation HomeViewController
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
 
-
-- (void)removeFromParentViewController
-{
-    [super removeFromParentViewController];
-    
-    UIView *subContentView=(UIView *)[contentView.subviews objectAtIndex:1];
-    
-    HomeContentTableView *tableView=(HomeContentTableView *)[subContentView.subviews objectAtIndex:0];
-    [tableView stop];
-    NSLog(@">>>home view controller: remove from parent view controller");
-}
-
 -(void)dealloc
 {
-    NSLog(@"===>>>>dealloc home view controller");
+    NSLog(@"dealloc home view controller");
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    //TODO 更兼容性的写法或者更好的设计
+    HomeMenuView *menuView=(HomeMenuView *)[self.view.subviews firstObject];
+    
+    if (![menuView isLogout]) {
+        return;
+    }
+    
+    //TODO 这样写不好，以后改
+    UIView *subContentView=(UIView *)[contentView.subviews objectAtIndex:1];
+    
+    if (subContentView.subviews.count>0) {
+        HomeContentTableView *tableView=(HomeContentTableView *)[subContentView.subviews objectAtIndex:0];
+        [tableView stop];
+    }
+}
 @end

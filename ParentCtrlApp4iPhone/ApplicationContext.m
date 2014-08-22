@@ -15,9 +15,6 @@
 
 #import <OHHTTPStubs/OHHTTPStubs.h>
 
-
-
-
 @implementation ApplicationContext
 
 //单例
@@ -32,6 +29,7 @@
 
 - (id)init {
     if (self = [super init]) {
+//        hasReadPromotion=YES;
         [self initMockHttpInfo];
     }
     return self;
@@ -51,12 +49,30 @@
     }];
 }
 
+-(void)login:(NSDictionary *)params  success:(void(^)())sucessHandler error:(void(^)(NSError *))errorHandler
+{
+    void (^_completionHandler)()=[sucessHandler copy];
+    hasLogin=YES;
+    _completionHandler();
+}
+
+-(BOOL)hasBond
+{
+    return hasBond;
+}
+
+
+-(void)logout
+{
+    hasLogin=NO;
+}
+
 - (void) getDevicesInfoWithTheRouter:(NSDictionary *)params  success:(void(^)(NSMutableArray *))sucessHandler error:(void(^)(NSError *))errorHandler
 {
     NSMutableArray *array=[NSMutableArray new];
     
     static BOOL chooseFirstOrSecond=YES;
-    
+
     //模拟从服务器端获取的设备信息数据
     
     if(chooseFirstOrSecond){
@@ -86,11 +102,16 @@
     }
     
     chooseFirstOrSecond=!chooseFirstOrSecond;
-    
+
     for (int i=0; i<array.count; i++) {
         DeviceInfo *d=(DeviceInfo *)[array objectAtIndex:i];
         d.rid+=i;
     }
+    
+    //成功的block
+    void (^_completionHandler)(NSMutableArray  *data);
+    //错误的block
+    void (^_errorHandler)(NSError  *error);
     
     _completionHandler = [sucessHandler copy];
     _errorHandler=[errorHandler copy];
@@ -110,6 +131,19 @@
                        context:(void*)context
 {
 //    NSLog(@"observe .. ok!");
+}
+
+- (NSString *) getStartState
+{
+    if (!hasLogin && !hasReadPromotion) {
+        return @"Promotion";
+    }
+    
+    if (!hasLogin) {
+        return @"Login";
+    }
+    
+    return @"Home";
 }
 
 

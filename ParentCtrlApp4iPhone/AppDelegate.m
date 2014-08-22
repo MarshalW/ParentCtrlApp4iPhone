@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BasicViewController.h"
+#import "ApplicationContext.h"
 
 @implementation AppDelegate
 
@@ -18,7 +19,7 @@
     
     [self initRouteMap];
     
-    NSString *startState=[self getStartState];
+    NSString *startState=[[ApplicationContext sharedContext] getStartState];
 
     UIViewController *viewController=[self getController:startState];
     navigationController = [[UINavigationController alloc]
@@ -43,17 +44,27 @@
     UIViewController *viewController=[self getController:stateName];
     [navigationController pushViewController:viewController animated:YES];
     
-    if ([stateName isEqualToString:@"Login"]) {
-        NSLog(@">>>>>>>>>test remove other view controller");
-        
-        NSMutableArray *navigationArray = [[NSMutableArray alloc] initWithArray: navigationController.viewControllers];
-        UIViewController *controller=[navigationArray objectAtIndex:0];
-        NSLog(@"controller: %@",controller);
-        [controller removeFromParentViewController];
-        [navigationArray removeObjectAtIndex: 0];  // You can pass your index here
-        navigationController.viewControllers = navigationArray;
+    if ([stateName isEqualToString:@"Login"] ||
+        [stateName isEqualToString:@"Home"])
+    {
+        [self clearOthersViewController];
     }
+}
 
+-(void) clearOthersViewController
+{
+    NSMutableArray *navigationArray = [[NSMutableArray alloc] initWithArray: navigationController.viewControllers];
+    
+    if (navigationArray.count>1) {
+        for (int i=0; i<navigationArray.count-1; i++) {
+            UIViewController *controller=[navigationArray objectAtIndex:i];
+            [controller removeFromParentViewController];
+        }
+        
+        UIViewController *controller=[navigationArray lastObject];
+        navigationArray=[[NSMutableArray alloc] initWithObjects:controller,nil];
+        navigationController.viewControllers =navigationArray;
+    }
 }
 
 - (void)backwardViewController:(NSNotification *)notification
@@ -66,15 +77,7 @@
     controllerMap=[[NSMutableDictionary alloc] initWithCapacity:32];
     
     [controllerMap setObject:@"HomeViewController" forKey:@"Home"];
-}
-
-- (NSString *) getStartState
-{
-    BOOL isLogin=YES;//模拟已经登录过
-    if (isLogin) {
-        return @"Home";
-    }
-    return @"Login";
+    [controllerMap setObject:@"PromotionViewController" forKey:@"Promotion"];
 }
 
 - (UIViewController *) getController: (NSString *)stateName
@@ -86,7 +89,8 @@
     if (!viewName) {
         controller= [[BasicViewController alloc] initWithNibName:[NSString stringWithFormat:@"%@View",stateName ] bundle:nil];
     }else{
-        controller=[[NSClassFromString(@"HomeViewController") alloc] initWithNibName:[NSString stringWithFormat:@"%@View",stateName ] bundle:nil];
+        controller=[[NSClassFromString([NSString stringWithFormat:@"%@ViewController",stateName]) alloc] initWithNibName:[NSString stringWithFormat:@"%@View",stateName ] bundle:nil];
+        //TODO 这里逻辑有点问题，controllerMap的value没有用起来。
     }
     
     return controller;

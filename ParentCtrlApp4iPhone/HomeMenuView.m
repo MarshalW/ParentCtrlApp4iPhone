@@ -8,6 +8,7 @@
 
 #import "HomeMenuView.h"
 #import "HomeRootView.h"
+#import "ApplicationContext.h"
 
 @implementation HomeMenuView
 
@@ -15,12 +16,16 @@
     
     [self returnMenu];
     
+    [[ApplicationContext sharedContext] logout];
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:nil forKey:@"userName"];
     
     NSDictionary *d = [NSDictionary dictionaryWithObject:@"Login"
                                                   forKey:@"state"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"forward" object:self userInfo:d];
+    
+    logout=YES;
 }
 
 //绑定/解绑路由器
@@ -68,12 +73,20 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"forward" object:self userInfo:d];
 }
 
-
 - (void)returnMenu
 {
     HomeRootView *rootView=(HomeRootView *)[self superview];
     [rootView _showMenu];
+}
 
+-(BOOL)isLogout
+{
+    return logout;
+}
+
+- (void)dealloc
+{
+    NSLog(@"dealloc home menu view");
 }
 
 @end

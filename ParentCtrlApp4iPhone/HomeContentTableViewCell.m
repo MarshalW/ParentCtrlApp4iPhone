@@ -34,24 +34,23 @@ float kAnimDuration=.3;
     [self.useButton addTarget:self action:@selector(useIt:) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)didMoveToSuperview{
-    if (!hasAddScrollEnableKvo) {
-        tableView=(HomeContentTableView *)[self findTableView:self];
-        
-        [tableView addObserver:self forKeyPath:@"scrollEnabled" options:NSKeyValueObservingOptionNew context:nil];
-        [tableView addObserver:self forKeyPath:@"timestamp" options:NSKeyValueObservingOptionNew context:nil];
-        
-        hasAddScrollEnableKvo=YES;
-    }
-    
-}
-
 -(void) initWithData:(DeviceInfo *)info
 {
     deviceInfo=info;
+    
     [deviceInfo addObserver:self forKeyPath:@"networkSpeed" options:NSKeyValueObservingOptionNew context:nil];
     
     self.textLabel.text=[NSString stringWithFormat: @"%@", info.networkSpeed];
+}
+
+-(void) addDeviceObserver
+{
+    [deviceInfo addObserver:self forKeyPath:@"networkSpeed" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+-(void) removeDeviceObserver
+{
+    [deviceInfo removeObserver:self forKeyPath:@"networkSpeed"];
 }
 
 - (void)observeValueForKeyPath:(NSString*)keyPath
@@ -63,7 +62,7 @@ float kAnimDuration=.3;
         if (opened) {
             [self enableOrDisableSubviews:NO];
         }else{
-            [self setUserInteractionEnabled:tableView.scrollEnabled];
+            [self setUserInteractionEnabled:self.tableView.scrollEnabled];
             [self enableOrDisableSubviews:YES];
         }
     }
@@ -75,8 +74,7 @@ float kAnimDuration=.3;
     }
     
     if ([keyPath isEqualToString:@"networkSpeed"]) {
-        NSLog(@"network speed changed: %@, %@",change,change[@"new"]);
-//        DeviceInfo *d=(DeviceInfo *)object;
+//        NSLog(@"network speed changed: %@, %@",change,change[@"new"]);
         self.textLabel.text=[NSString stringWithFormat: @"%@", change[@"new"]];
     }
 }
@@ -99,8 +97,6 @@ float kAnimDuration=.3;
     opened=NO;
     frontView.frame=startFrame;
     [self enableOrDisableSubviews:YES];
-    
-    [deviceInfo removeObserver:self forKeyPath:@"networkSpeed"];
 }
 
 - (UITableView *)superTableView
@@ -118,28 +114,20 @@ float kAnimDuration=.3;
 
 - (void)dealloc
 {
-    NSLog(@"=====>>>>>>dealloc cell");
-    [deviceInfo removeObserver:self forKeyPath:@"networkSpeed"];
+    NSLog(@"dealloc home content table cell");
     
-    [tableView removeObserver:self forKeyPath:@"scrollEnabled"];
-    [tableView removeObserver:self forKeyPath:@"timestamp"];
 }
 
-
 -(void)deleteIt:(id)sender{
-    //    NSLog(@"delete it.");
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:self];
+    [self.tableView removeDevice:(int)indexPath.row];
     
-    NSIndexPath *indexPath = [tableView indexPathForCell:self];
-    [tableView removeDevice:(int)indexPath.row];
-    
-    [tableView beginUpdates];
-    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+    [self.tableView beginUpdates];
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                      withRowAnimation:UITableViewRowAnimationFade];
-    [tableView endUpdates];
+    [self.tableView endUpdates];
     
-    tableView.scrollEnabled=YES;
-    
-    //TODO 临时写过，cell里的view也许需要手工删除
+    self.tableView.scrollEnabled=YES;
 }
 
 -(void)useIt:(id)sender{
@@ -168,7 +156,6 @@ float kAnimDuration=.3;
             
             stopped=NO;
             frontView.frame=CGRectMake(startViewX+deltaX, frontView.frame.origin.y, frontView.frame.size.width, frontView.frame.size.height);
-            
             break;
         }
         case UIGestureRecognizerStateEnded:{
@@ -194,7 +181,6 @@ float kAnimDuration=.3;
 
 -(void)openOrCloseFrontView
 {
-    
     [UIView animateWithDuration:kAnimDuration
                           delay:0
                         options: UIViewAnimationOptionCurveEaseInOut
@@ -207,10 +193,9 @@ float kAnimDuration=.3;
                      }
                      completion:^(BOOL finished){
                          opened=!opened;
-                         [tableView setValue:@(!opened) forKey:@"scrollEnabled"];
+                         [self.tableView setValue:@(!opened) forKey:@"scrollEnabled"];
                      }];
 }
-
 
 - (IBAction)action:(id)sender {
     NSLog(@"action!");

@@ -21,7 +21,7 @@
         self.dataSource=self;
         deviceInfoArray=array;
         
-        timer=[NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+        timer=[NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
     }
     return self;
 }
@@ -29,12 +29,35 @@
 -(void) stop
 {
     [timer invalidate];
+    
+     for (UITableViewCell *cell in self.visibleCells)
+     {
+         HomeContentTableViewCell *contentCell=(HomeContentTableViewCell *)cell;
+         [contentCell removeDeviceObserver];
+         
+         [self removeObserver:cell forKeyPath:@"scrollEnabled"];
+         [self removeObserver:cell forKeyPath:@"timestamp"];
+     }
 }
+
+//-(void) start
+//{
+//    timer=[NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+//    
+//    for (UITableViewCell *cell in self.visibleCells)
+//    {
+//        HomeContentTableViewCell *contentCell=(HomeContentTableViewCell *)cell;
+//        [self addObserver:self forKeyPath:@"scrollEnabled" options: context:<#(void *)#>]
+////        [contentCell removeDeviceObserver];
+//        
+////        [self removeObserver:cell forKeyPath:@"scrollEnabled"];
+////        [self removeObserver:cell forKeyPath:@"timestamp"];
+//    }
+//}
+
 
 - (void)timerAction:(NSTimer*)timer
 {
-    NSLog(@"networkSpeed ...");
-    
     [[ApplicationContext sharedContext] getDevicesInfoWithTheRouter:nil success:^(NSMutableArray * array) {
         for (int i=0; i<deviceInfoArray.count; i++) {
             DeviceInfo *device=[deviceInfoArray objectAtIndex:i];
@@ -61,6 +84,21 @@
     return [deviceInfoArray count];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self addObserver:cell forKeyPath:@"scrollEnabled" options:NSKeyValueObservingOptionNew context:nil];
+    [self addObserver:cell forKeyPath:@"timestamp" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self removeObserver:cell forKeyPath:@"scrollEnabled"];
+    [self removeObserver:cell forKeyPath:@"timestamp"];
+    
+    HomeContentTableViewCell *contentCell=(HomeContentTableViewCell *)cell;
+    [contentCell removeDeviceObserver];
+}
+
 -(void) removeDevice:(int)index
 {
     [deviceInfoArray removeObjectAtIndex:index];
@@ -75,6 +113,7 @@
     if (cell == nil) {
         
         cell=[[[NSBundle mainBundle] loadNibNamed:@"HomeContentTableViewCell" owner:self options:nil] objectAtIndex:0];
+        cell.tableView=self;
     }
     
     [cell initWithData:[deviceInfoArray objectAtIndex:indexPath.row]];
@@ -98,7 +137,7 @@
 
 -(void)dealloc
 {
-    NSLog(@"===>>>>table view dealloc");
+    NSLog(@"dealloc content table view");
 }
 
 @end

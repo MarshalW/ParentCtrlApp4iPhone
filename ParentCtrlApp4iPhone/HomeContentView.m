@@ -27,6 +27,8 @@
 -(void)initContentSubview
 {
     contentSubview=[[UIView alloc] initWithFrame:self.bounds];
+    [self addSubview:contentSubview];
+    
     [self loadData];
 }
 
@@ -43,14 +45,16 @@
 //加载内容子视图
 -(void) loadContentSubviews:(NSMutableArray *)array
 {
-    contentSubview.backgroundColor=[UIColor lightGrayColor];
-    [self addSubview:contentSubview];
-    
     HomeContentTableView *tableView=[[HomeContentTableView alloc] initWithFrame:contentSubview.bounds deviceInfoArray:array];
     tableView.backgroundColor=[UIColor yellowColor];
     tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     
     [contentSubview addSubview:tableView];
+}
+
+- (void) dealloc
+{
+    NSLog(@"dealloc home content view");
 }
 
 @end

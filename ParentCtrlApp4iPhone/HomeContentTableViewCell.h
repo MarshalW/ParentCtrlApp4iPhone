@@ -20,14 +20,17 @@
     __weak IBOutlet UIScrollView *scrollView;
     BOOL opened, stopped, hasAddScrollEnableKvo;
     
-    
-    __weak HomeContentTableView *tableView;
+//    __weak HomeContentTableView *tableView;
     
     DeviceInfo *deviceInfo;
 }
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *useButton;
 
+@property (weak, nonatomic)HomeContentTableView *tableView;
+
 -(void) initWithData:(DeviceInfo *)info;
+
+-(void) removeDeviceObserver;
 
 @end

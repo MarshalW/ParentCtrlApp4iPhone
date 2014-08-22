@@ -14,13 +14,10 @@
 @interface ApplicationContext : NSObject
 
 {
-    //成功的block
-    void (^_completionHandler)(NSMutableArray  *data);
-    //错误的block
-    void (^_errorHandler)(NSError  *error);
-    
-    //test kvo
-//    KvoDemo *k;
+    //临时变量
+    BOOL hasReadPromotion;
+    BOOL hasLogin;
+    BOOL hasBond;
 }
 
 + (id)sharedContext;
@@ -28,5 +25,14 @@
 //获取该路由下的设备信息数组
 - (void) getDevicesInfoWithTheRouter:(NSDictionary *)params  success:(void(^)(NSMutableArray *))sucessHandler error:(void(^)(NSError *))errorHandler;
 
+- (NSString *) getStartState;
+
+
+//临时性的，用于架构说明
+-(void)login:(NSDictionary *)params  success:(void(^)())sucessHandler error:(void(^)(NSError *))errorHandler;
+
+-(void)logout;
+
+-(BOOL)hasBond;
 
 @end

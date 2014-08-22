@@ -57,6 +57,11 @@
     [self _showMenu];
 }
 
+- (void) dealloc
+{
+    NSLog(@"dealloc home root view");
+}
+
 -(void) _showMenu
 {
     //临时解决mask view高度的问题
@@ -91,7 +96,7 @@
                          }
                      }
                      completion:^(BOOL finished){
-                         NSLog(@"Done!");
+//                         NSLog(@"Done!");
                      }];
 }
 
