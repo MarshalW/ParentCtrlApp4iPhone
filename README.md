@@ -3,6 +3,7 @@ ParentCtrlApp4iPhone
 
 # 版本描述
 
+* m5a1: 加入了设备设置模块
 * m5：代码整体重构了，调整了很多东西，便于以后多人开发
 * m4sp1：Home（带TableView）和登录部分的切换正常了
 * m4: 实现基本的自定义TableView
