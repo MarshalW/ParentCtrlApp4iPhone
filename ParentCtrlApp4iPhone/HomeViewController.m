@@ -125,6 +125,19 @@ int kHomeViewCellHeight=110;
 {
     [tableView removeObserver:cell forKeyPath:@"scrollEnabled"];
 }
+- (IBAction)deviceSetting:(id)sender {
+    HomeContentTableViewCell *cell=((HomeContentCellSubView *)(((UIView *)sender).superview)).cell;
+    [cell closeBottomView];
+    
+    NSIndexPath *indexPath = [tableView indexPathForCell:cell];
+    DeviceInfo *deviceInfo=[deviceInfoArray objectAtIndex:indexPath.row];
+    
+    NSDictionary *_params=[[NSDictionary alloc] initWithObjectsAndKeys:deviceInfo,@"device", nil];
+    [ApplicationContext gotoState:@"DeviceSetting" params:_params];
+    
+    tableView.scrollEnabled=YES;
+}
+
 
 //删除指定的cell
 - (IBAction)deleteCell:(id)sender {

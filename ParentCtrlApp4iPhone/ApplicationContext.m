@@ -9,11 +9,12 @@
 #import "ApplicationContext.h"
 
 #import "DeviceInfo.h"
+#import "HttpMock.h"
 
 #import "AFHTTPRequestOperationManager.h"
 #import "AFHTTPRequestOperation.h"
 
-#import <OHHTTPStubs/OHHTTPStubs.h>
+//#import <OHHTTPStubs/OHHTTPStubs.h>
 
 //int testCountForTableView=5;
 
@@ -47,23 +48,9 @@
 - (id)init {
     if (self = [super init]) {
 //        hasReadPromotion=YES;
-        [self initMockHttpInfo];
+        [HttpMock initMock];
     }
     return self;
-}
-
-//初始化mock http信息
--(void)initMockHttpInfo
-{
-    //test
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return [[request.URL absoluteString] isEqualToString:@"https://alpha-api.app.net/stream/0/posts/stream/global"];
-    } withStubResponse:^OHHTTPStubsResponse*(NSURLRequest *request) {
-        NSString* fixture = OHPathForFileInBundle(@"test.json",nil);
-        return [[OHHTTPStubsResponse responseWithFileAtPath:fixture
-                                                 statusCode:200 headers:@{@"Content-Type":@"text/json"}
-                 ]requestTime:1.0 responseTime:1.0];//模拟延时2秒
-    }];
 }
 
 -(void)login:(NSDictionary *)params  success:(void(^)())sucessHandler error:(void(^)(NSError *))errorHandler
@@ -157,14 +144,6 @@
         _errorHandler(error);
     }];
 }
-
-//- (void)observeValueForKeyPath:(NSString*)keyPath
-//                      ofObject:(id)object
-//                        change:(NSDictionary*)change
-//                       context:(void*)context
-//{
-////    NSLog(@"observe .. ok!");
-//}
 
 - (NSString *) getStartState
 {

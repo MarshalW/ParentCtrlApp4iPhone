@@ -50,6 +50,11 @@
     }
 }
 
+- (void) setParams:(NSDictionary *)_params
+{
+    params=_params;
+}
+
 - (void) dealloc
 {
     NSLog(@"***** dealloc basic view controller");

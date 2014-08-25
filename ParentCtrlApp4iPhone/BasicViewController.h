@@ -18,6 +18,10 @@
     __weak IBOutlet UIView *headerView;
     __weak IBOutlet UIView *footerView;
     __weak IBOutlet UIView *contentView;
+    
+    NSDictionary *params;
 }
+
+- (void) setParams:(NSDictionary *)params;
 
 @end

@@ -32,6 +32,9 @@
 		F320305619975B2F006CC7B8 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320305519975B2F006CC7B8 /* AboutViewController.xib */; };
 		F320305919975C4C006CC7B8 /* MoreSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320305819975C4C006CC7B8 /* MoreSettingsViewController.xib */; };
 		F3203060199762A8006CC7B8 /* ApplicationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F320305F199762A8006CC7B8 /* ApplicationContext.m */; };
+		F3F2E13B19AAE28C00D3C57A /* DeviceSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F2E13919AAE28C00D3C57A /* DeviceSettingViewController.m */; };
+		F3F2E13C19AAE28C00D3C57A /* DeviceSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F2E13A19AAE28C00D3C57A /* DeviceSettingViewController.xib */; };
+		F3F2E13F19AAED5300D3C57A /* HttpMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F2E13E19AAED5300D3C57A /* HttpMock.m */; };
 		F3F7C028199F4E98002FFD1D /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F7C027199F4E98002FFD1D /* HeaderView.m */; };
 		F3F7C02B199F802C002FFD1D /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F7C02A199F802C002FFD1D /* DeviceInfo.m */; };
 		F3F7C03119A08415002FFD1D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F7C03019A08415002FFD1D /* HomeViewController.m */; };
@@ -106,6 +109,11 @@
 		F320305819975C4C006CC7B8 /* MoreSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreSettingsViewController.xib; sourceTree = "<group>"; };
 		F320305E199762A8006CC7B8 /* ApplicationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationContext.h; sourceTree = "<group>"; };
 		F320305F199762A8006CC7B8 /* ApplicationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationContext.m; sourceTree = "<group>"; };
+		F3F2E13819AAE28C00D3C57A /* DeviceSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceSettingViewController.h; sourceTree = "<group>"; };
+		F3F2E13919AAE28C00D3C57A /* DeviceSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceSettingViewController.m; sourceTree = "<group>"; };
+		F3F2E13A19AAE28C00D3C57A /* DeviceSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceSettingViewController.xib; sourceTree = "<group>"; };
+		F3F2E13D19AAED5300D3C57A /* HttpMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpMock.h; sourceTree = "<group>"; };
+		F3F2E13E19AAED5300D3C57A /* HttpMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpMock.m; sourceTree = "<group>"; };
 		F3F7C026199F4E98002FFD1D /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		F3F7C027199F4E98002FFD1D /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		F3F7C029199F802C002FFD1D /* DeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfo.h; sourceTree = "<group>"; };
@@ -302,8 +310,20 @@
 				F3F7C02A199F802C002FFD1D /* DeviceInfo.m */,
 				F3F86E551994B56D00E16D8B /* BasicViewController.h */,
 				F3F86E561994B56D00E16D8B /* BasicViewController.m */,
+				F3F2E13D19AAED5300D3C57A /* HttpMock.h */,
+				F3F2E13E19AAED5300D3C57A /* HttpMock.m */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		F3F2E13719AAE25200D3C57A /* DeviceSetting */ = {
+			isa = PBXGroup;
+			children = (
+				F3F2E13819AAE28C00D3C57A /* DeviceSettingViewController.h */,
+				F3F2E13919AAE28C00D3C57A /* DeviceSettingViewController.m */,
+				F3F2E13A19AAE28C00D3C57A /* DeviceSettingViewController.xib */,
+			);
+			name = DeviceSetting;
 			sourceTree = "<group>";
 		};
 		F3F86E1A1994B52500E16D8B = {
@@ -345,18 +365,19 @@
 			isa = PBXGroup;
 			children = (
 				F320305D19976280006CC7B8 /* Utils */,
-				F30C61E419A996CE004D5AC7 /* MailSignUp */,
-				F30C61CD19A84E24004D5AC7 /* SignUp */,
-				F30C61D319A85D79004D5AC7 /* Demo */,
-				F30C61C719A6FC24004D5AC7 /* ForgotPassword */,
 				F30C61BE19A6076A004D5AC7 /* Promotion */,
-				F320305719975C35006CC7B8 /* MoreSettings */,
-				F320305419975AED006CC7B8 /* About */,
-				F320304E19975636006CC7B8 /* ParentAdvise */,
-				F320303719966491006CC7B8 /* FindDevice */,
-				F320302819965D1F006CC7B8 /* BindRouter */,
 				F320302219965B85006CC7B8 /* Login */,
+				F30C61CD19A84E24004D5AC7 /* SignUp */,
+				F30C61E419A996CE004D5AC7 /* MailSignUp */,
+				F30C61C719A6FC24004D5AC7 /* ForgotPassword */,
+				F30C61D319A85D79004D5AC7 /* Demo */,
+				F320302819965D1F006CC7B8 /* BindRouter */,
 				F303329F1994D91800FE858A /* Home */,
+				F3F2E13719AAE25200D3C57A /* DeviceSetting */,
+				F320303719966491006CC7B8 /* FindDevice */,
+				F320304E19975636006CC7B8 /* ParentAdvise */,
+				F320305419975AED006CC7B8 /* About */,
+				F320305719975C35006CC7B8 /* MoreSettings */,
 				F3F86E351994B52500E16D8B /* AppDelegate.h */,
 				F3F86E361994B52500E16D8B /* AppDelegate.m */,
 				F3F86E381994B52500E16D8B /* Images.xcassets */,
@@ -481,6 +502,7 @@
 				F320305919975C4C006CC7B8 /* MoreSettingsViewController.xib in Resources */,
 				F3FAF42C199B62FB00DCCF57 /* HomeContentTableViewCell.xib in Resources */,
 				F320305019975663006CC7B8 /* ParentAdviseViewController.xib in Resources */,
+				F3F2E13C19AAE28C00D3C57A /* DeviceSettingViewController.xib in Resources */,
 				F30C61CF19A85015004D5AC7 /* SignUpViewController.xib in Resources */,
 				F3F7C03A19A22FFD002FFD1D /* 首页-管理页-0812.png in Resources */,
 				F3F86E391994B52500E16D8B /* Images.xcassets in Resources */,
@@ -555,6 +577,7 @@
 				F30C61EC19A99E31004D5AC7 /* MailSignUpView.m in Sources */,
 				F30C61F219A9AA88004D5AC7 /* FindDeviceViewController.m in Sources */,
 				F3F7C028199F4E98002FFD1D /* HeaderView.m in Sources */,
+				F3F2E13B19AAE28C00D3C57A /* DeviceSettingViewController.m in Sources */,
 				F30C61EF19A9A592004D5AC7 /* SignUpViewController.m in Sources */,
 				F3F86E331994B52500E16D8B /* main.m in Sources */,
 				F3FAF42B199B62FB00DCCF57 /* HomeContentTableViewCell.m in Sources */,
@@ -562,6 +585,7 @@
 				F30C61F519A9ABE0004D5AC7 /* BindRouterViewController.m in Sources */,
 				F30C61F819A9ACF3004D5AC7 /* LoginViewController.m in Sources */,
 				F30C61E819A99B37004D5AC7 /* MailSignUpViewController.m in Sources */,
+				F3F2E13F19AAED5300D3C57A /* HttpMock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,10 +50,14 @@
         if (![[ApplicationContext sharedContext] hasBond]) {
             stateName=@"Demo";
         }
-
     }
     
-    UIViewController *viewController=[self getController:stateName];
+    BasicViewController *viewController=[self getController:stateName];
+    
+    if (notification.userInfo) {
+        [viewController setParams:notification.userInfo];
+    }
+    
     [navigationController pushViewController:viewController animated:YES];
     
     if ([stateName isEqualToString:@"Login"] ||
@@ -84,7 +88,7 @@
     [navigationController popViewControllerAnimated:YES];
 }
 
-- (UIViewController *) getController: (NSString *)stateName
+- (BasicViewController *) getController: (NSString *)stateName
 {
     NSString * xibName=[NSString stringWithFormat:@"%@ViewController",stateName];
     NSString * controllerClassName=@"BasicViewController";
@@ -95,7 +99,7 @@
         controllerClassName=xibName;
     }
     
-    return [[NSClassFromString(controllerClassName) alloc] initWithNibName:xibName bundle:nil];
+   return [[NSClassFromString(controllerClassName) alloc] initWithNibName:xibName bundle:nil];
 }
 
 @end
