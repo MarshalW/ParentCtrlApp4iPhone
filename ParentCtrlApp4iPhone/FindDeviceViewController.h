@@ -1,16 +1,13 @@
 //
-//  HomeContentLightTableView.h
+//  FindDeviceViewController.h
 //  ParentCtrlApp4iPhone
 //
 //  Created by Marshal Wu on 14-8-24.
 //  Copyright (c) 2014年 Marshal Wu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BasicViewController.h"
 
-@interface HomeContentTableView : UITableView
-
-{
-}
+@interface FindDeviceViewController : BasicViewController
 
 @end

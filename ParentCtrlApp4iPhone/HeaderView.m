@@ -7,11 +7,12 @@
 //
 
 #import "HeaderView.h"
+#import "ApplicationContext.h"
 
 @implementation HeaderView
 
 - (IBAction)goBack:(id)sender {
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"backward" object:self];
+    [ApplicationContext backwardState];
 }
 
 @end

@@ -15,6 +15,8 @@
 
 #import <OHHTTPStubs/OHHTTPStubs.h>
 
+//int testCountForTableView=5;
+
 @implementation ApplicationContext
 
 //单例
@@ -25,6 +27,21 @@
         sharedContext = [[self alloc] init];
     });
     return sharedContext;
+}
+
++ (void) gotoState:(NSString *)stateName params:(NSDictionary *)params{
+    NSMutableDictionary *d = [NSMutableDictionary dictionaryWithObject:stateName
+                                                  forKey:@"state"];
+    if (params) {
+        [d addEntriesFromDictionary:params];
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"forward" object:self userInfo:d];
+}
+
++ (void)backwardState
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"backward" object:self];
 }
 
 - (id)init {
@@ -61,6 +78,12 @@
     return hasBond;
 }
 
+-(void)bindRouter
+{
+    //TODO 临时，将改为异步调用
+    hasBond=YES;
+}
+
 
 -(void)logout
 {
@@ -75,6 +98,7 @@
 
     //模拟从服务器端获取的设备信息数据
     
+    //模拟数据变化
     if(chooseFirstOrSecond){
         [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:1]];
         [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:10]];
@@ -102,6 +126,15 @@
     }
     
     chooseFirstOrSecond=!chooseFirstOrSecond;
+    
+    //模拟数据增
+    //TODO bug数据增加的时候tableview有bug，当reloaddata发生在条目左移的状态，scroll不可用
+//    for (int i=0; i<testCountForTableView; i++) {
+//        [array addObject:[[DeviceInfo alloc] initWithNetworkSpeed:testCountForTableView]];
+//    }
+//    
+//    testCountForTableView++;
+    
 
     for (int i=0; i<array.count; i++) {
         DeviceInfo *d=(DeviceInfo *)[array objectAtIndex:i];
@@ -125,13 +158,13 @@
     }];
 }
 
-- (void)observeValueForKeyPath:(NSString*)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary*)change
-                       context:(void*)context
-{
-//    NSLog(@"observe .. ok!");
-}
+//- (void)observeValueForKeyPath:(NSString*)keyPath
+//                      ofObject:(id)object
+//                        change:(NSDictionary*)change
+//                       context:(void*)context
+//{
+////    NSLog(@"observe .. ok!");
+//}
 
 - (NSString *) getStartState
 {

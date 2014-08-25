@@ -11,18 +11,23 @@
 #import "DeviceInfo.h"
 #import "HomeContentTableView.h"
 
+
+@class HomeContentCellSubView;
+
 @interface HomeContentTableViewCell : UITableViewCell
 {
     CGPoint panStartPoint;
     float startViewX;
     CGRect startFrame,endFrame;
-    __weak IBOutlet UIView *tagView,*frontView;
+    __weak IBOutlet UIView *frontView;
     __weak IBOutlet UIScrollView *scrollView;
     BOOL opened, stopped, hasAddScrollEnableKvo;
     
-//    __weak HomeContentTableView *tableView;
+    __weak IBOutlet UIView *backView;
     
-    DeviceInfo *deviceInfo;
+    __weak IBOutlet HomeContentCellSubView *frontContentView;
+    __weak IBOutlet HomeContentCellSubView *backContentView;
+//    DeviceInfo *deviceInfo;
 }
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet UIButton *useButton;
@@ -31,6 +36,12 @@
 
 -(void) initWithData:(DeviceInfo *)info;
 
--(void) removeDeviceObserver;
+//-(void) removeDeviceObserver;
+
+//重构使用的新方法
+-(void) closeBottomView;
+-(void) addObservers;
+-(void) removeObservers;
+
 
 @end

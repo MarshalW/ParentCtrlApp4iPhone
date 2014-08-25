@@ -6,33 +6,23 @@
 //  Copyright (c) 2014年 Marshal Wu. All rights reserved.
 //
 
+
+//TODO 这个类写的比较乱，已经做了重构，只乱在类内部，对外面没有影响。有空再说。
 #import "HomeRootView.h"
 
 @implementation HomeRootView
 
-//- (id)initWithFrame:(CGRect)frame
-//{
-//    self = [super initWithFrame:frame];
-//    if (self) {
-//    }
-//    return self;
-//}
-
-- (id)initWithCoder:(NSCoder *)decoder
+-(void) loadSubviews
 {
-    self = [super initWithCoder:decoder];
-    if (self) {
-        [self initMenuView];
-        [self initMaskView];
-    }
-    return self;
+    [self initMenuView];
+    [self initMaskView];
 }
 
 -(void)initMenuView
 {
-    UIView *headView = [[[NSBundle mainBundle] loadNibNamed:@"HomeMenuView" owner:self options:nil] objectAtIndex:0];
-    headView.frame=CGRectMake(-headView.frame.size.width, 0, headView.frame.size.width, headView.frame.size.height);
-    [self addSubview:headView];
+    menuView.frame=CGRectMake(-menuView.frame.size.width, 0, menuView.frame.size.width, self.frame.size.height);
+    menuView.hidden=YES;
+    [self addSubview:menuView];
 }
 
 -(void) initMaskView
@@ -62,14 +52,18 @@
     NSLog(@"dealloc home root view");
 }
 
+-(void) openMenu
+{
+    [self _showMenu];
+}
+
+-(void) closeMenu{
+    [self _showMenu];    
+}
+
 -(void) _showMenu
 {
-    //临时解决mask view高度的问题
-    if (!isMaskHeightChecked) {
-        isMaskHeightChecked=YES;
-        maskView.frame=self.frame;
-        [self bringSubviewToFront:maskView];
-    }
+    menuView.hidden=NO;
     
     float moveY=-250;
     if (!menuShow) {

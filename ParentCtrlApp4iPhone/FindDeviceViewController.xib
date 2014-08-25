@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasicViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindDeviceViewController">
             <connections>
                 <outlet property="contentView" destination="R0n-B7-tcD" id="WsX-LT-QNj"/>
                 <outlet property="footerView" destination="3ph-yg-w7f" id="6nV-R9-2y8"/>
@@ -38,7 +38,7 @@
             <color key="backgroundColor" red="0.84621473803179759" green="1" blue="0.47745907272948362" alpha="1" colorSpace="calibratedRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
-        <view contentMode="scaleToFill" id="3ph-yg-w7f" userLabel="FooterView" customClass="FindDeviceFooterView">
+        <view contentMode="scaleToFill" id="3ph-yg-w7f" userLabel="FooterView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -49,7 +49,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="goBack:" destination="ewO-Vb-LSb" eventType="touchUpInside" id="qjx-2g-827"/>
+                        <action selector="confirm:" destination="-1" eventType="touchUpInside" id="3Is-gS-ASM"/>
                     </connections>
                 </button>
             </subviews>

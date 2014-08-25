@@ -9,6 +9,7 @@
 #import "BasicViewController.h"
 
 @interface PromotionViewController : BasicViewController
+
 - (IBAction)next:(id)sender;
 
 @end

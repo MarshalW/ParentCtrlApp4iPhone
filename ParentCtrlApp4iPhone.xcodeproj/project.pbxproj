@@ -8,23 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		24F199F389A9425E8CAA1399 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A53B9ED21DEF446C8B5978A8 /* libPods.a */; };
-		F303329E1994C41A00FE858A /* ContentListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F303329D1994C41A00FE858A /* ContentListView.xib */; };
+		F30C61C019A6079A004D5AC7 /* PromotionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30C61BF19A6079A004D5AC7 /* PromotionViewController.xib */; };
+		F30C61C619A6161A004D5AC7 /* PromotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C61C519A6161A004D5AC7 /* PromotionViewController.m */; };
+		F30C61C919A6FC4A004D5AC7 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30C61C819A6FC4A004D5AC7 /* ForgotPasswordViewController.xib */; };
+		F30C61CC19A70051004D5AC7 /* ForgotPasswordContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C61CB19A70051004D5AC7 /* ForgotPasswordContentView.m */; };
+		F30C61CF19A85015004D5AC7 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30C61CE19A85015004D5AC7 /* SignUpViewController.xib */; };
+		F30C61D519A85DBF004D5AC7 /* DemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30C61D419A85DBF004D5AC7 /* DemoViewController.xib */; };
+		F30C61E319A87EA0004D5AC7 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C61E219A87EA0004D5AC7 /* DemoViewController.m */; };
+		F30C61E819A99B37004D5AC7 /* MailSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C61E619A99B37004D5AC7 /* MailSignUpViewController.m */; };
+		F30C61E919A99B37004D5AC7 /* MailSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F30C61E719A99B37004D5AC7 /* MailSignUpViewController.xib */; };
+		F30C61EC19A99E31004D5AC7 /* MailSignUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C61EB19A99E31004D5AC7 /* MailSignUpView.m */; };
+		F30C61EF19A9A592004D5AC7 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C61EE19A9A592004D5AC7 /* SignUpViewController.m */; };
+		F30C61F219A9AA88004D5AC7 /* FindDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C61F119A9AA88004D5AC7 /* FindDeviceViewController.m */; };
+		F30C61F519A9ABE0004D5AC7 /* BindRouterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C61F419A9ABE0004D5AC7 /* BindRouterViewController.m */; };
+		F30C61F819A9ACF3004D5AC7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C61F719A9ACF3004D5AC7 /* LoginViewController.m */; };
+		F30C61FB19AA1510004D5AC7 /* HomeContentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C61FA19AA1510004D5AC7 /* HomeContentTableView.m */; };
+		F30C620119AAD0AD004D5AC7 /* HomeContentCellSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = F30C620019AAD0AD004D5AC7 /* HomeContentCellSubView.m */; };
 		F320301A1995F2AD006CC7B8 /* HomeRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = F32030191995F2AD006CC7B8 /* HomeRootView.m */; };
-		F320301C1995F419006CC7B8 /* HomeMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320301B1995F419006CC7B8 /* HomeMenuView.xib */; };
-		F320302119963ABC006CC7B8 /* HomeMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F320302019963ABC006CC7B8 /* HomeMenuView.m */; };
-		F320302419965BAF006CC7B8 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320302319965BAF006CC7B8 /* LoginView.xib */; };
-		F320302719965C85006CC7B8 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F320302619965C85006CC7B8 /* LoginView.m */; };
-		F320302A19965D3D006CC7B8 /* BindRouterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320302919965D3D006CC7B8 /* BindRouterView.xib */; };
-		F320302D19965E55006CC7B8 /* BindRouterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F320302C19965E55006CC7B8 /* BindRouterView.m */; };
-		F320303019966059006CC7B8 /* HomeContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F320302F19966059006CC7B8 /* HomeContentView.m */; };
-		F3203033199661B2006CC7B8 /* ManagementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3203032199661B2006CC7B8 /* ManagementView.xib */; };
-		F32030391996651D006CC7B8 /* FindDeviceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32030381996651D006CC7B8 /* FindDeviceView.xib */; };
-		F320303F19966AA1006CC7B8 /* FindDeviceFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F320303E19966AA1006CC7B8 /* FindDeviceFooterView.m */; };
-		F320304419974193006CC7B8 /* BindRouterWizardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320304319974193006CC7B8 /* BindRouterWizardView.xib */; };
-		F320304D199754D8006CC7B8 /* BindRouterWizardContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F320304C199754D8006CC7B8 /* BindRouterWizardContentView.m */; };
-		F320305019975663006CC7B8 /* ParentAdviseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320304F19975663006CC7B8 /* ParentAdviseView.xib */; };
-		F320305619975B2F006CC7B8 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320305519975B2F006CC7B8 /* AboutView.xib */; };
-		F320305919975C4C006CC7B8 /* MoreSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320305819975C4C006CC7B8 /* MoreSettingsView.xib */; };
+		F320302419965BAF006CC7B8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320302319965BAF006CC7B8 /* LoginViewController.xib */; };
+		F320302A19965D3D006CC7B8 /* BindRouterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320302919965D3D006CC7B8 /* BindRouterViewController.xib */; };
+		F32030391996651D006CC7B8 /* FindDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32030381996651D006CC7B8 /* FindDeviceViewController.xib */; };
+		F320305019975663006CC7B8 /* ParentAdviseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320304F19975663006CC7B8 /* ParentAdviseViewController.xib */; };
+		F320305619975B2F006CC7B8 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320305519975B2F006CC7B8 /* AboutViewController.xib */; };
+		F320305919975C4C006CC7B8 /* MoreSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F320305819975C4C006CC7B8 /* MoreSettingsViewController.xib */; };
 		F3203060199762A8006CC7B8 /* ApplicationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = F320305F199762A8006CC7B8 /* ApplicationContext.m */; };
 		F3F7C028199F4E98002FFD1D /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F7C027199F4E98002FFD1D /* HeaderView.m */; };
 		F3F7C02B199F802C002FFD1D /* DeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F7C02A199F802C002FFD1D /* DeviceInfo.m */; };
@@ -45,9 +51,8 @@
 		F3F86E4A1994B52500E16D8B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F3F86E481994B52500E16D8B /* InfoPlist.strings */; };
 		F3F86E4C1994B52500E16D8B /* ParentCtrlApp4iPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F86E4B1994B52500E16D8B /* ParentCtrlApp4iPhoneTests.m */; };
 		F3F86E571994B56D00E16D8B /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F86E561994B56D00E16D8B /* BasicViewController.m */; };
-		F3F86E591994B59000E16D8B /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F86E581994B59000E16D8B /* HomeView.xib */; };
+		F3F86E591994B59000E16D8B /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F86E581994B59000E16D8B /* HomeViewController.xib */; };
 		F3FAF3D51998B17E00DCCF57 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = F3FAF3D41998B17E00DCCF57 /* test.json */; };
-		F3FAF421199B41B800DCCF57 /* HomeContentTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FAF420199B41B800DCCF57 /* HomeContentTableView.m */; };
 		F3FAF42B199B62FB00DCCF57 /* HomeContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FAF429199B62FB00DCCF57 /* HomeContentTableViewCell.m */; };
 		F3FAF42C199B62FB00DCCF57 /* HomeContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3FAF42A199B62FB00DCCF57 /* HomeContentTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -64,30 +69,41 @@
 
 /* Begin PBXFileReference section */
 		A53B9ED21DEF446C8B5978A8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F303329D1994C41A00FE858A /* ContentListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentListView.xib; sourceTree = "<group>"; };
+		F30C61BF19A6079A004D5AC7 /* PromotionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromotionViewController.xib; sourceTree = "<group>"; };
+		F30C61C419A6161A004D5AC7 /* PromotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionViewController.h; sourceTree = "<group>"; };
+		F30C61C519A6161A004D5AC7 /* PromotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionViewController.m; sourceTree = "<group>"; };
+		F30C61C819A6FC4A004D5AC7 /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		F30C61CA19A70051004D5AC7 /* ForgotPasswordContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordContentView.h; sourceTree = "<group>"; };
+		F30C61CB19A70051004D5AC7 /* ForgotPasswordContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordContentView.m; sourceTree = "<group>"; };
+		F30C61CE19A85015004D5AC7 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		F30C61D419A85DBF004D5AC7 /* DemoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoViewController.xib; sourceTree = "<group>"; };
+		F30C61E119A87EA0004D5AC7 /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		F30C61E219A87EA0004D5AC7 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		F30C61E519A99B37004D5AC7 /* MailSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailSignUpViewController.h; sourceTree = "<group>"; };
+		F30C61E619A99B37004D5AC7 /* MailSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailSignUpViewController.m; sourceTree = "<group>"; };
+		F30C61E719A99B37004D5AC7 /* MailSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MailSignUpViewController.xib; sourceTree = "<group>"; };
+		F30C61EA19A99E31004D5AC7 /* MailSignUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailSignUpView.h; sourceTree = "<group>"; };
+		F30C61EB19A99E31004D5AC7 /* MailSignUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailSignUpView.m; sourceTree = "<group>"; };
+		F30C61ED19A9A592004D5AC7 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		F30C61EE19A9A592004D5AC7 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		F30C61F019A9AA88004D5AC7 /* FindDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindDeviceViewController.h; sourceTree = "<group>"; };
+		F30C61F119A9AA88004D5AC7 /* FindDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindDeviceViewController.m; sourceTree = "<group>"; };
+		F30C61F319A9ABE0004D5AC7 /* BindRouterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindRouterViewController.h; sourceTree = "<group>"; };
+		F30C61F419A9ABE0004D5AC7 /* BindRouterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindRouterViewController.m; sourceTree = "<group>"; };
+		F30C61F619A9ACF3004D5AC7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F30C61F719A9ACF3004D5AC7 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F30C61F919AA1510004D5AC7 /* HomeContentTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentTableView.h; sourceTree = "<group>"; };
+		F30C61FA19AA1510004D5AC7 /* HomeContentTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContentTableView.m; sourceTree = "<group>"; };
+		F30C61FF19AAD0AD004D5AC7 /* HomeContentCellSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentCellSubView.h; sourceTree = "<group>"; };
+		F30C620019AAD0AD004D5AC7 /* HomeContentCellSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContentCellSubView.m; sourceTree = "<group>"; };
 		F32030181995F2AD006CC7B8 /* HomeRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRootView.h; sourceTree = "<group>"; };
 		F32030191995F2AD006CC7B8 /* HomeRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRootView.m; sourceTree = "<group>"; };
-		F320301B1995F419006CC7B8 /* HomeMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeMenuView.xib; sourceTree = "<group>"; };
-		F320301F19963ABC006CC7B8 /* HomeMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeMenuView.h; sourceTree = "<group>"; };
-		F320302019963ABC006CC7B8 /* HomeMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeMenuView.m; sourceTree = "<group>"; };
-		F320302319965BAF006CC7B8 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
-		F320302519965C85006CC7B8 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
-		F320302619965C85006CC7B8 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
-		F320302919965D3D006CC7B8 /* BindRouterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindRouterView.xib; sourceTree = "<group>"; };
-		F320302B19965E55006CC7B8 /* BindRouterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindRouterView.h; sourceTree = "<group>"; };
-		F320302C19965E55006CC7B8 /* BindRouterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindRouterView.m; sourceTree = "<group>"; };
-		F320302E19966059006CC7B8 /* HomeContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentView.h; sourceTree = "<group>"; };
-		F320302F19966059006CC7B8 /* HomeContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContentView.m; sourceTree = "<group>"; };
-		F3203032199661B2006CC7B8 /* ManagementView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManagementView.xib; sourceTree = "<group>"; };
-		F32030381996651D006CC7B8 /* FindDeviceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindDeviceView.xib; sourceTree = "<group>"; };
-		F320303D19966AA1006CC7B8 /* FindDeviceFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindDeviceFooterView.h; sourceTree = "<group>"; };
-		F320303E19966AA1006CC7B8 /* FindDeviceFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindDeviceFooterView.m; sourceTree = "<group>"; };
-		F320304319974193006CC7B8 /* BindRouterWizardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindRouterWizardView.xib; sourceTree = "<group>"; };
-		F320304B199754D8006CC7B8 /* BindRouterWizardContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindRouterWizardContentView.h; sourceTree = "<group>"; };
-		F320304C199754D8006CC7B8 /* BindRouterWizardContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindRouterWizardContentView.m; sourceTree = "<group>"; };
-		F320304F19975663006CC7B8 /* ParentAdviseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentAdviseView.xib; sourceTree = "<group>"; };
-		F320305519975B2F006CC7B8 /* AboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
-		F320305819975C4C006CC7B8 /* MoreSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreSettingsView.xib; sourceTree = "<group>"; };
+		F320302319965BAF006CC7B8 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		F320302919965D3D006CC7B8 /* BindRouterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BindRouterViewController.xib; sourceTree = "<group>"; };
+		F32030381996651D006CC7B8 /* FindDeviceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindDeviceViewController.xib; sourceTree = "<group>"; };
+		F320304F19975663006CC7B8 /* ParentAdviseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentAdviseViewController.xib; sourceTree = "<group>"; };
+		F320305519975B2F006CC7B8 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		F320305819975C4C006CC7B8 /* MoreSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoreSettingsViewController.xib; sourceTree = "<group>"; };
 		F320305E199762A8006CC7B8 /* ApplicationContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationContext.h; sourceTree = "<group>"; };
 		F320305F199762A8006CC7B8 /* ApplicationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationContext.m; sourceTree = "<group>"; };
 		F3F7C026199F4E98002FFD1D /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
@@ -117,10 +133,8 @@
 		F3F86E4B1994B52500E16D8B /* ParentCtrlApp4iPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentCtrlApp4iPhoneTests.m; sourceTree = "<group>"; };
 		F3F86E551994B56D00E16D8B /* BasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicViewController.h; sourceTree = "<group>"; };
 		F3F86E561994B56D00E16D8B /* BasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicViewController.m; sourceTree = "<group>"; };
-		F3F86E581994B59000E16D8B /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		F3F86E581994B59000E16D8B /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F3FAF3D41998B17E00DCCF57 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
-		F3FAF41F199B41B800DCCF57 /* HomeContentTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentTableView.h; sourceTree = "<group>"; };
-		F3FAF420199B41B800DCCF57 /* HomeContentTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContentTableView.m; sourceTree = "<group>"; };
 		F3FAF428199B62FB00DCCF57 /* HomeContentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeContentTableViewCell.h; sourceTree = "<group>"; };
 		F3FAF429199B62FB00DCCF57 /* HomeContentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeContentTableViewCell.m; sourceTree = "<group>"; };
 		F3FAF42A199B62FB00DCCF57 /* HomeContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeContentTableViewCell.xib; sourceTree = "<group>"; };
@@ -155,39 +169,80 @@
 		F303329F1994D91800FE858A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F3F86E581994B59000E16D8B /* HomeView.xib */,
+				F3F7C02F19A08415002FFD1D /* HomeViewController.h */,
+				F3F7C03019A08415002FFD1D /* HomeViewController.m */,
+				F3F86E581994B59000E16D8B /* HomeViewController.xib */,
 				F32030181995F2AD006CC7B8 /* HomeRootView.h */,
 				F32030191995F2AD006CC7B8 /* HomeRootView.m */,
-				F320301F19963ABC006CC7B8 /* HomeMenuView.h */,
-				F320302019963ABC006CC7B8 /* HomeMenuView.m */,
-				F320301B1995F419006CC7B8 /* HomeMenuView.xib */,
-				F320302E19966059006CC7B8 /* HomeContentView.h */,
-				F320302F19966059006CC7B8 /* HomeContentView.m */,
-				F3FAF41F199B41B800DCCF57 /* HomeContentTableView.h */,
-				F3FAF420199B41B800DCCF57 /* HomeContentTableView.m */,
 				F3FAF428199B62FB00DCCF57 /* HomeContentTableViewCell.h */,
 				F3FAF429199B62FB00DCCF57 /* HomeContentTableViewCell.m */,
 				F3FAF42A199B62FB00DCCF57 /* HomeContentTableViewCell.xib */,
-				F3F7C02F19A08415002FFD1D /* HomeViewController.h */,
-				F3F7C03019A08415002FFD1D /* HomeViewController.m */,
+				F30C61F919AA1510004D5AC7 /* HomeContentTableView.h */,
+				F30C61FA19AA1510004D5AC7 /* HomeContentTableView.m */,
+				F30C61FF19AAD0AD004D5AC7 /* HomeContentCellSubView.h */,
+				F30C620019AAD0AD004D5AC7 /* HomeContentCellSubView.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
 		};
-		F30332A01994D94600FE858A /* ContentList */ = {
+		F30C61BE19A6076A004D5AC7 /* Promotion */ = {
 			isa = PBXGroup;
 			children = (
-				F303329D1994C41A00FE858A /* ContentListView.xib */,
+				F30C61BF19A6079A004D5AC7 /* PromotionViewController.xib */,
+				F30C61C419A6161A004D5AC7 /* PromotionViewController.h */,
+				F30C61C519A6161A004D5AC7 /* PromotionViewController.m */,
 			);
-			name = ContentList;
+			name = Promotion;
+			sourceTree = "<group>";
+		};
+		F30C61C719A6FC24004D5AC7 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				F30C61C819A6FC4A004D5AC7 /* ForgotPasswordViewController.xib */,
+				F30C61CA19A70051004D5AC7 /* ForgotPasswordContentView.h */,
+				F30C61CB19A70051004D5AC7 /* ForgotPasswordContentView.m */,
+			);
+			name = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		F30C61CD19A84E24004D5AC7 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				F30C61ED19A9A592004D5AC7 /* SignUpViewController.h */,
+				F30C61EE19A9A592004D5AC7 /* SignUpViewController.m */,
+				F30C61CE19A85015004D5AC7 /* SignUpViewController.xib */,
+			);
+			name = SignUp;
+			sourceTree = "<group>";
+		};
+		F30C61D319A85D79004D5AC7 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				F30C61E119A87EA0004D5AC7 /* DemoViewController.h */,
+				F30C61E219A87EA0004D5AC7 /* DemoViewController.m */,
+				F30C61D419A85DBF004D5AC7 /* DemoViewController.xib */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		F30C61E419A996CE004D5AC7 /* MailSignUp */ = {
+			isa = PBXGroup;
+			children = (
+				F30C61E519A99B37004D5AC7 /* MailSignUpViewController.h */,
+				F30C61E619A99B37004D5AC7 /* MailSignUpViewController.m */,
+				F30C61E719A99B37004D5AC7 /* MailSignUpViewController.xib */,
+				F30C61EA19A99E31004D5AC7 /* MailSignUpView.h */,
+				F30C61EB19A99E31004D5AC7 /* MailSignUpView.m */,
+			);
+			name = MailSignUp;
 			sourceTree = "<group>";
 		};
 		F320302219965B85006CC7B8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				F320302519965C85006CC7B8 /* LoginView.h */,
-				F320302619965C85006CC7B8 /* LoginView.m */,
-				F320302319965BAF006CC7B8 /* LoginView.xib */,
+				F320302319965BAF006CC7B8 /* LoginViewController.xib */,
+				F30C61F619A9ACF3004D5AC7 /* LoginViewController.h */,
+				F30C61F719A9ACF3004D5AC7 /* LoginViewController.m */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -195,45 +250,27 @@
 		F320302819965D1F006CC7B8 /* BindRouter */ = {
 			isa = PBXGroup;
 			children = (
-				F320302B19965E55006CC7B8 /* BindRouterView.h */,
-				F320302C19965E55006CC7B8 /* BindRouterView.m */,
-				F320302919965D3D006CC7B8 /* BindRouterView.xib */,
+				F320302919965D3D006CC7B8 /* BindRouterViewController.xib */,
+				F30C61F319A9ABE0004D5AC7 /* BindRouterViewController.h */,
+				F30C61F419A9ABE0004D5AC7 /* BindRouterViewController.m */,
 			);
 			name = BindRouter;
-			sourceTree = "<group>";
-		};
-		F320303119966145006CC7B8 /* Management */ = {
-			isa = PBXGroup;
-			children = (
-				F3203032199661B2006CC7B8 /* ManagementView.xib */,
-			);
-			name = Management;
 			sourceTree = "<group>";
 		};
 		F320303719966491006CC7B8 /* FindDevice */ = {
 			isa = PBXGroup;
 			children = (
-				F32030381996651D006CC7B8 /* FindDeviceView.xib */,
-				F320303D19966AA1006CC7B8 /* FindDeviceFooterView.h */,
-				F320303E19966AA1006CC7B8 /* FindDeviceFooterView.m */,
+				F30C61F019A9AA88004D5AC7 /* FindDeviceViewController.h */,
+				F30C61F119A9AA88004D5AC7 /* FindDeviceViewController.m */,
+				F32030381996651D006CC7B8 /* FindDeviceViewController.xib */,
 			);
 			name = FindDevice;
-			sourceTree = "<group>";
-		};
-		F320304019973D34006CC7B8 /* BindRouterWizard */ = {
-			isa = PBXGroup;
-			children = (
-				F320304319974193006CC7B8 /* BindRouterWizardView.xib */,
-				F320304B199754D8006CC7B8 /* BindRouterWizardContentView.h */,
-				F320304C199754D8006CC7B8 /* BindRouterWizardContentView.m */,
-			);
-			name = BindRouterWizard;
 			sourceTree = "<group>";
 		};
 		F320304E19975636006CC7B8 /* ParentAdvise */ = {
 			isa = PBXGroup;
 			children = (
-				F320304F19975663006CC7B8 /* ParentAdviseView.xib */,
+				F320304F19975663006CC7B8 /* ParentAdviseViewController.xib */,
 			);
 			name = ParentAdvise;
 			sourceTree = "<group>";
@@ -241,7 +278,7 @@
 		F320305419975AED006CC7B8 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				F320305519975B2F006CC7B8 /* AboutView.xib */,
+				F320305519975B2F006CC7B8 /* AboutViewController.xib */,
 			);
 			name = About;
 			sourceTree = "<group>";
@@ -249,7 +286,7 @@
 		F320305719975C35006CC7B8 /* MoreSettings */ = {
 			isa = PBXGroup;
 			children = (
-				F320305819975C4C006CC7B8 /* MoreSettingsView.xib */,
+				F320305819975C4C006CC7B8 /* MoreSettingsViewController.xib */,
 			);
 			name = MoreSettings;
 			sourceTree = "<group>";
@@ -308,15 +345,17 @@
 			isa = PBXGroup;
 			children = (
 				F320305D19976280006CC7B8 /* Utils */,
+				F30C61E419A996CE004D5AC7 /* MailSignUp */,
+				F30C61CD19A84E24004D5AC7 /* SignUp */,
+				F30C61D319A85D79004D5AC7 /* Demo */,
+				F30C61C719A6FC24004D5AC7 /* ForgotPassword */,
+				F30C61BE19A6076A004D5AC7 /* Promotion */,
 				F320305719975C35006CC7B8 /* MoreSettings */,
 				F320305419975AED006CC7B8 /* About */,
 				F320304E19975636006CC7B8 /* ParentAdvise */,
-				F320304019973D34006CC7B8 /* BindRouterWizard */,
 				F320303719966491006CC7B8 /* FindDevice */,
-				F320303119966145006CC7B8 /* Management */,
 				F320302819965D1F006CC7B8 /* BindRouter */,
 				F320302219965B85006CC7B8 /* Login */,
-				F30332A01994D94600FE858A /* ContentList */,
 				F303329F1994D91800FE858A /* Home */,
 				F3F86E351994B52500E16D8B /* AppDelegate.h */,
 				F3F86E361994B52500E16D8B /* AppDelegate.m */,
@@ -433,24 +472,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F320304419974193006CC7B8 /* BindRouterWizardView.xib in Resources */,
 				F3F7C03819A22FFD002FFD1D /* 登陆流程-0812-1.jpg in Resources */,
+				F30C61C919A6FC4A004D5AC7 /* ForgotPasswordViewController.xib in Resources */,
 				F3F86E311994B52500E16D8B /* InfoPlist.strings in Resources */,
 				F3FAF3D51998B17E00DCCF57 /* test.json in Resources */,
+				F30C61D519A85DBF004D5AC7 /* DemoViewController.xib in Resources */,
 				F3F7C03919A22FFD002FFD1D /* 设置页-0812.png in Resources */,
-				F320305919975C4C006CC7B8 /* MoreSettingsView.xib in Resources */,
+				F320305919975C4C006CC7B8 /* MoreSettingsViewController.xib in Resources */,
 				F3FAF42C199B62FB00DCCF57 /* HomeContentTableViewCell.xib in Resources */,
-				F320305019975663006CC7B8 /* ParentAdviseView.xib in Resources */,
+				F320305019975663006CC7B8 /* ParentAdviseViewController.xib in Resources */,
+				F30C61CF19A85015004D5AC7 /* SignUpViewController.xib in Resources */,
 				F3F7C03A19A22FFD002FFD1D /* 首页-管理页-0812.png in Resources */,
 				F3F86E391994B52500E16D8B /* Images.xcassets in Resources */,
-				F320301C1995F419006CC7B8 /* HomeMenuView.xib in Resources */,
-				F320302419965BAF006CC7B8 /* LoginView.xib in Resources */,
-				F320302A19965D3D006CC7B8 /* BindRouterView.xib in Resources */,
-				F3203033199661B2006CC7B8 /* ManagementView.xib in Resources */,
-				F32030391996651D006CC7B8 /* FindDeviceView.xib in Resources */,
-				F303329E1994C41A00FE858A /* ContentListView.xib in Resources */,
-				F320305619975B2F006CC7B8 /* AboutView.xib in Resources */,
-				F3F86E591994B59000E16D8B /* HomeView.xib in Resources */,
+				F320302419965BAF006CC7B8 /* LoginViewController.xib in Resources */,
+				F320302A19965D3D006CC7B8 /* BindRouterViewController.xib in Resources */,
+				F32030391996651D006CC7B8 /* FindDeviceViewController.xib in Resources */,
+				F320305619975B2F006CC7B8 /* AboutViewController.xib in Resources */,
+				F30C61E919A99B37004D5AC7 /* MailSignUpViewController.xib in Resources */,
+				F3F86E591994B59000E16D8B /* HomeViewController.xib in Resources */,
+				F30C61C019A6079A004D5AC7 /* PromotionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,22 +542,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30C620119AAD0AD004D5AC7 /* HomeContentCellSubView.m in Sources */,
 				F3F86E371994B52500E16D8B /* AppDelegate.m in Sources */,
-				F320304D199754D8006CC7B8 /* BindRouterWizardContentView.m in Sources */,
 				F320301A1995F2AD006CC7B8 /* HomeRootView.m in Sources */,
 				F3F7C02B199F802C002FFD1D /* DeviceInfo.m in Sources */,
-				F320302719965C85006CC7B8 /* LoginView.m in Sources */,
+				F30C61CC19A70051004D5AC7 /* ForgotPasswordContentView.m in Sources */,
 				F3F7C03119A08415002FFD1D /* HomeViewController.m in Sources */,
-				F3FAF421199B41B800DCCF57 /* HomeContentTableView.m in Sources */,
+				F30C61C619A6161A004D5AC7 /* PromotionViewController.m in Sources */,
 				F3203060199762A8006CC7B8 /* ApplicationContext.m in Sources */,
-				F320303019966059006CC7B8 /* HomeContentView.m in Sources */,
+				F30C61E319A87EA0004D5AC7 /* DemoViewController.m in Sources */,
+				F30C61FB19AA1510004D5AC7 /* HomeContentTableView.m in Sources */,
+				F30C61EC19A99E31004D5AC7 /* MailSignUpView.m in Sources */,
+				F30C61F219A9AA88004D5AC7 /* FindDeviceViewController.m in Sources */,
 				F3F7C028199F4E98002FFD1D /* HeaderView.m in Sources */,
-				F320302119963ABC006CC7B8 /* HomeMenuView.m in Sources */,
+				F30C61EF19A9A592004D5AC7 /* SignUpViewController.m in Sources */,
 				F3F86E331994B52500E16D8B /* main.m in Sources */,
-				F320303F19966AA1006CC7B8 /* FindDeviceFooterView.m in Sources */,
-				F320302D19965E55006CC7B8 /* BindRouterView.m in Sources */,
 				F3FAF42B199B62FB00DCCF57 /* HomeContentTableViewCell.m in Sources */,
 				F3F86E571994B56D00E16D8B /* BasicViewController.m in Sources */,
+				F30C61F519A9ABE0004D5AC7 /* BindRouterViewController.m in Sources */,
+				F30C61F819A9ACF3004D5AC7 /* LoginViewController.m in Sources */,
+				F30C61E819A99B37004D5AC7 /* MailSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,11 +17,12 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    [self initRouteMap];
-    
+    //获取初始的状态
     NSString *startState=[[ApplicationContext sharedContext] getStartState];
 
+    //根据初始状态，获得viewController实例
     UIViewController *viewController=[self getController:startState];
+    
     navigationController = [[UINavigationController alloc]
                             initWithRootViewController: viewController];
     navigationController.navigationBar.hidden = YES;
@@ -31,8 +32,8 @@
     
     [self.window makeKeyAndVisible];
     
+    //通过通知机制调度和切换各个Controller
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(forwardViewController:) name:@"forward" object:nil];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(backwardViewController:) name:@"backward" object:nil];
     
     return YES;
@@ -41,6 +42,17 @@
 - (void)forwardViewController:(NSNotification *)notification
 {
     NSString *stateName=[[notification userInfo] objectForKey:@"state"];
+    
+    if ([stateName isEqualToString:@"Home"]) {
+        //TODO 如果没有登录，到Demo页
+        
+        //TODO 如果没有绑定过路由，到Demo页
+        if (![[ApplicationContext sharedContext] hasBond]) {
+            stateName=@"Demo";
+        }
+
+    }
+    
     UIViewController *viewController=[self getController:stateName];
     [navigationController pushViewController:viewController animated:YES];
     
@@ -72,33 +84,18 @@
     [navigationController popViewControllerAnimated:YES];
 }
 
-- (void) initRouteMap
-{
-    controllerMap=[[NSMutableDictionary alloc] initWithCapacity:32];
-    
-    [controllerMap setObject:@"HomeViewController" forKey:@"Home"];
-    [controllerMap setObject:@"PromotionViewController" forKey:@"Promotion"];
-}
-
 - (UIViewController *) getController: (NSString *)stateName
 {
-    NSString *viewName=(NSString *)[controllerMap objectForKey:stateName];
+    NSString * xibName=[NSString stringWithFormat:@"%@ViewController",stateName];
+    NSString * controllerClassName=@"BasicViewController";
     
-    UIViewController *controller=nil;
-    
-    if (!viewName) {
-        controller= [[BasicViewController alloc] initWithNibName:[NSString stringWithFormat:@"%@View",stateName ] bundle:nil];
-    }else{
-        controller=[[NSClassFromString([NSString stringWithFormat:@"%@ViewController",stateName]) alloc] initWithNibName:[NSString stringWithFormat:@"%@View",stateName ] bundle:nil];
-        //TODO 这里逻辑有点问题，controllerMap的value没有用起来。
+    //如果没有和xib同名的Controller类，就默认用BasicViewController
+    Class controllerClass=NSClassFromString(xibName);
+    if (controllerClass) {
+        controllerClassName=xibName;
     }
     
-    return controller;
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    
+    return [[NSClassFromString(controllerClassName) alloc] initWithNibName:xibName bundle:nil];
 }
 
 @end

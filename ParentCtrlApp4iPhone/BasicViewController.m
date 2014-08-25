@@ -50,11 +50,6 @@
     }
 }
 
-//- (void)willMoveToParentViewController:(UIViewController *)parent
-//{
-//    NSLog(@">>>>>will move to parent view controller");
-//}
-
 - (void) dealloc
 {
     NSLog(@"***** dealloc basic view controller");

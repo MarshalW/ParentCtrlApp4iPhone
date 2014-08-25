@@ -11,10 +11,16 @@
 @interface HomeRootView : UIView
 
 {
-    BOOL menuShow,isMaskHeightChecked;
+    BOOL menuShow;
     UIView *maskView;
+    __weak IBOutlet UIView *menuView;
 }
 
 -(void) _showMenu;
+
+//重构用的新方法
+-(void) openMenu;
+-(void) closeMenu;
+-(void) loadSubviews;
 
 @end

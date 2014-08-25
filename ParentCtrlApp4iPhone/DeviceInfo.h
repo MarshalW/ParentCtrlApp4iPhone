@@ -11,7 +11,6 @@
 @interface DeviceInfo : NSObject
 
 {
-//    NSNumber *networkSpeed;//网速
     long totalTime;//总的时长
 }
 

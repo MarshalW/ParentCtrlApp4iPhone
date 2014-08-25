@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ApplicationContext.h"
+
 @interface BasicViewController : UIViewController
 
 {

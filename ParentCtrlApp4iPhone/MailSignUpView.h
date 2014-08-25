@@ -1,5 +1,5 @@
 //
-//  HomeContentLightTableView.h
+//  MailSignUpView.h
 //  ParentCtrlApp4iPhone
 //
 //  Created by Marshal Wu on 14-8-24.
@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeContentTableView : UITableView
+@interface MailSignUpView : UIView<UIWebViewDelegate>
 
 {
+    UIWebView *webView;
 }
 
 @end

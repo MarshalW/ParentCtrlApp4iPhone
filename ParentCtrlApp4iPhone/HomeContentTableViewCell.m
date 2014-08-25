@@ -7,6 +7,8 @@
 //
 
 #import "HomeContentTableViewCell.h"
+#import "HomeContentCellSubView.h"
+
 
 
 //Cell内容视图移出后的X坐标
@@ -19,7 +21,9 @@ float kAnimDuration=.3;
 
 - (void)awakeFromNib
 {
+    //记录起始frame
     startFrame=frontView.frame;
+    //计算出cell前面视图打开后的位置
     endFrame=CGRectMake(kEndPointX, frontView.frame.origin.y, frontView.frame.size.width, frontView.frame.size.height);
     
     //CGFloat top, left, bottom, right;
@@ -29,28 +33,23 @@ float kAnimDuration=.3;
     [scrollView.panGestureRecognizer setMaximumNumberOfTouches:1];
     [scrollView.panGestureRecognizer addTarget:self action:@selector(panGestureAction:)];
     
-    [self.deleteButton addTarget:self action:@selector(deleteIt:) forControlEvents:UIControlEventTouchUpInside];
+    backContentView.frame=backView.bounds;
+    [backView addSubview:backContentView];
+    backContentView.cell=self;
     
-    [self.useButton addTarget:self action:@selector(useIt:) forControlEvents:UIControlEventTouchUpInside];
+    frontContentView.frame=frontView.bounds;
+    frontContentView.userInteractionEnabled=NO;
+    [frontView addSubview:frontContentView];
+    frontContentView.cell=self;
 }
 
 -(void) initWithData:(DeviceInfo *)info
 {
-    deviceInfo=info;
+//    deviceInfo=info;
     
-    [deviceInfo addObserver:self forKeyPath:@"networkSpeed" options:NSKeyValueObservingOptionNew context:nil];
+//    [deviceInfo addObserver:self forKeyPath:@"networkSpeed" options:NSKeyValueObservingOptionNew context:nil];
     
-    self.textLabel.text=[NSString stringWithFormat: @"%@", info.networkSpeed];
-}
-
--(void) addDeviceObserver
-{
-    [deviceInfo addObserver:self forKeyPath:@"networkSpeed" options:NSKeyValueObservingOptionNew context:nil];
-}
-
--(void) removeDeviceObserver
-{
-    [deviceInfo removeObserver:self forKeyPath:@"networkSpeed"];
+//    self.textLabel.text=[NSString stringWithFormat: @"%@", info.networkSpeed];
 }
 
 - (void)observeValueForKeyPath:(NSString*)keyPath
@@ -59,34 +58,8 @@ float kAnimDuration=.3;
                        context:(void*)context
 {
     if ([keyPath isEqualToString:@"scrollEnabled"]) {
-        if (opened) {
-            [self enableOrDisableSubviews:NO];
-        }else{
+        if (!opened) {
             [self setUserInteractionEnabled:self.tableView.scrollEnabled];
-            [self enableOrDisableSubviews:YES];
-        }
-    }
-    
-    if ([keyPath isEqualToString:@"timestamp"]) {
-        if (opened) {
-            [self openOrCloseFrontView];
-        }
-    }
-    
-    if ([keyPath isEqualToString:@"networkSpeed"]) {
-//        NSLog(@"network speed changed: %@, %@",change,change[@"new"]);
-        self.textLabel.text=[NSString stringWithFormat: @"%@", change[@"new"]];
-    }
-}
-
--(void)enableOrDisableSubviews:(BOOL)enable
-{
-    for (int i=0; i<[frontView subviews].count; i++) {
-        UIView *v=[[frontView subviews] objectAtIndex:i];
-        if ([v isKindOfClass:[UIScrollView class]]) {
-            v.userInteractionEnabled=YES;
-        }else{
-            v.userInteractionEnabled=enable;
         }
     }
 }
@@ -96,42 +69,12 @@ float kAnimDuration=.3;
 {
     opened=NO;
     frontView.frame=startFrame;
-    [self enableOrDisableSubviews:YES];
-}
-
-- (UITableView *)superTableView
-{
-    return (UITableView *)[self findTableView:self];
-}
-
-- (UIView *)findTableView:(UIView *)view
-{
-    if (view.superview && [view.superview isKindOfClass:[UITableView class]]) {
-        return view.superview;
-    }
-    return [self findTableView:view.superview];
 }
 
 - (void)dealloc
 {
     NSLog(@"dealloc home content table cell");
     
-}
-
--(void)deleteIt:(id)sender{
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:self];
-    [self.tableView removeDevice:(int)indexPath.row];
-    
-    [self.tableView beginUpdates];
-    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                     withRowAnimation:UITableViewRowAnimationFade];
-    [self.tableView endUpdates];
-    
-    self.tableView.scrollEnabled=YES;
-}
-
--(void)useIt:(id)sender{
-    NSLog(@"use it.");
 }
 
 
@@ -168,11 +111,9 @@ float kAnimDuration=.3;
             break;
         }
         case UIGestureRecognizerStateCancelled:{
-            NSLog(@"cancell ..");
             break;
         }
         default:
-            NSLog(@"default ..");
             break;
     }
     
@@ -199,6 +140,21 @@ float kAnimDuration=.3;
 
 - (IBAction)action:(id)sender {
     NSLog(@"action!");
+}
+
+-(void) closeBottomView{
+    if (opened) {
+        [self openOrCloseFrontView];
+    }
+}
+
+-(void) addObservers{
+    [self.tableView addObserver:self forKeyPath:@"scrollEnabled" options:NSKeyValueObservingOptionNew context:nil];
+    
+}
+
+-(void) removeObservers{
+    [self.tableView removeObserver:self forKeyPath:@"scrollEnabled"];
 }
 
 @end
